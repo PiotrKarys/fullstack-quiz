@@ -42,3 +42,6 @@ config.json
 # Inne
 *.bak
 *.backup
+
+#baza danych
+/data
