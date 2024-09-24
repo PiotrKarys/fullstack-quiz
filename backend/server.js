@@ -1,0 +1,28 @@
+require("dotenv").config();
+const express = require("express");
+const connectDB = require("./config/db");
+const cors = require("cors");
+const updateDatabase = require("./updateDatabase");
+const routes = require("./routes/Routes");
+
+const app = express();
+
+// Połączenie z MongoDB i aktualizacja bazy danych
+connectDB().then(() => {
+  updateDatabase().then(() => {
+    console.log("Sprawdzenie i aktualizacja bazy danych zakończone");
+  });
+});
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Trasy API
+app.use("/api", routes);
+
+// Uruchom serwer
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Serwer działa na porcie ${PORT}`);
+});
