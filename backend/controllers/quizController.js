@@ -1,30 +1,8 @@
-const Quiz = require("../models/quizSchema");
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
+const quizService = require("../services/quizService");
 
 exports.getRandomQuestions = async (req, res) => {
   try {
-    const questions = await Quiz.aggregate([
-      { $sample: { size: 10 } },
-      {
-        $project: {
-          question: 1,
-          answers: 1,
-        },
-      },
-    ]);
-
-    const shuffledQuestions = questions.map(question => ({
-      ...question,
-      answers: shuffleArray(question.answers),
-    }));
-
+    const shuffledQuestions = await quizService.getRandomQuestions();
     res.json(shuffledQuestions);
   } catch (error) {
     res
