@@ -1,7 +1,0 @@
-{
-  "ignore": ["node_modules/*", "data/*", "tests/*"],
-  "ext": "js,json",
-  "events": {
-    "restart": "clear || cls"
-  }
-}
