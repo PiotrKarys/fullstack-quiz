@@ -2,29 +2,87 @@ const Quiz = require("../models/quizSchema");
 const QuizSession = require("../models/quizSessionSchema");
 const { shuffleArray } = require("../utils/helpers");
 
+let cachedQuestions = {};
+
+exports.loadQuestionsToCache = async () => {
+  const questions = await Quiz.find({}).lean();
+  cachedQuestions = questions.reduce((acc, question) => {
+    acc[question._id.toString()] = question;
+    return acc;
+  }, {});
+  console.log(
+    `Załadowano ${
+      Object.keys(cachedQuestions).length
+    } pytań do pamięci podręcznej`
+  );
+  console.log(`Przykładowe ID pytania: ${Object.keys(cachedQuestions)[0]}`);
+};
+
+async function loadQuestionsToCache() {
+  if (!cachedQuestions) {
+    cachedQuestions = await Quiz.find({});
+    console.log("Pytania załadowane do pamięci podręcznej");
+  }
+}
+
 exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
   try {
-    let session = await QuizSession.findOne({ sessionId });
+    await this.loadQuestionsToCache();
+    console.log(`Liczba pytań w cache: ${Object.keys(cachedQuestions).length}`);
 
-    if (!session) {
-      const totalQuestions = await Quiz.countDocuments();
-      const allQuestions = await Quiz.find({}, "_id");
-      const shuffledQuestionIds = shuffleArray(allQuestions.map(q => q._id));
+    let session = await QuizSession.findOne({ sessionId });
+    console.log(`Znaleziona sesja: ${session ? "Tak" : "Nie"}`);
+
+    if (!session || page === 1) {
+      if (session) {
+        await QuizSession.deleteOne({ sessionId });
+        console.log(`Usunięto starą sesję`);
+      }
+
+      const shuffledQuestionIds = shuffleArray(
+        Object.keys(cachedQuestions)
+      ).slice(0, 10); // Ograniczenie do 10 pytań
+      console.log(`Liczba przetasowanych pytań: ${shuffledQuestionIds.length}`);
 
       session = new QuizSession({
         sessionId,
         questions: shuffledQuestionIds,
         currentPage: 1,
       });
+
       await session.save();
+      console.log(
+        `Utworzono nową sesję. ID pierwszego pytania w sesji: ${session.questions[0]}`
+      );
     }
 
     const skip = (page - 1) * pageSize;
     const questionIds = session.questions.slice(skip, skip + pageSize);
+    console.log(`Wybrane ID pytań: ${questionIds}`);
 
-    const questions = await Quiz.find({ _id: { $in: questionIds } });
+    const questions = questionIds
+      .map(id => cachedQuestions[id])
+      .filter(Boolean);
+    console.log(`Liczba znalezionych pytań: ${questions.length}`);
+
+    if (questions.length === 0) {
+      console.log(
+        `Nie znaleziono pytań. Sprawdzam bezpośrednio w bazie danych...`
+      );
+      const questionFromDB = await Quiz.findById(questionIds[0]);
+      console.log(
+        `Pytanie znalezione bezpośrednio w bazie: ${
+          questionFromDB ? JSON.stringify(questionFromDB) : "Nie"
+        }`
+      );
+      if (questionFromDB) {
+        questions.push(questionFromDB);
+        cachedQuestions[questionFromDB._id.toString()] = questionFromDB;
+      }
+    }
+
     const questionsWithShuffledAnswers = questions.map(question => ({
-      ...question.toObject(),
+      ...question,
       answers: shuffleArray([...question.answers]),
     }));
 
@@ -38,6 +96,7 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
       totalQuestions: session.questions.length,
     };
   } catch (error) {
+    console.error("Błąd podczas pobierania pytań:", error);
     throw new Error("Błąd podczas pobierania pytań: " + error.message);
   }
 };
@@ -45,6 +104,8 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
 exports.resetQuiz = async sessionId => {
   await QuizSession.findOneAndDelete({ sessionId });
 };
+
 exports.getAllQuestions = async () => {
-  return await Quiz.find({}, "question"); // Zwracamy tylko pole 'question'
+  await loadQuestionsToCache();
+  return cachedQuestions.map(q => ({ question: q.question }));
 };

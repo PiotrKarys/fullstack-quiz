@@ -11,6 +11,7 @@ const quizSchema = new mongoose.Schema({
   answers: {
     type: [answerSchema],
     required: true,
+
     validate: v => Array.isArray(v) && v.length > 0,
   },
 });

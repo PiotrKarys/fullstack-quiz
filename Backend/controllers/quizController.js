@@ -1,4 +1,5 @@
 const quizService = require("../services/quizService");
+const { addTask } = require("../services/backgroundTasks");
 const Quiz = require("../models/quizSchema");
 
 exports.getRandomQuestions = async (req, res) => {
@@ -11,14 +12,36 @@ exports.getRandomQuestions = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const pageSize = parseInt(req.query.pageSize) || 1;
 
+    console.log(
+      `Zapytanie o quiz: sessionId=${sessionId}, page=${page}, pageSize=${pageSize}`
+    );
+
     const result = await quizService.getRandomQuestions(
       sessionId,
       page,
       pageSize
     );
 
-    res.json(result);
+    if (result.questions.length === 0) {
+      console.log(
+        "Nie znaleziono pytań w serwisie. Sprawdzam bezpośrednio w bazie danych..."
+      );
+      const allQuestions = await Quiz.find({});
+      console.log(`Liczba pytań w bazie danych: ${allQuestions.length}`);
+      if (allQuestions.length > 0) {
+        console.log(
+          `Przykładowe pytanie z bazy: ${JSON.stringify(allQuestions[0])}`
+        );
+      }
+    }
+
+    res.json({
+      ...result,
+      sessionId: sessionId,
+      pageSize: pageSize,
+    });
   } catch (error) {
+    console.error("Błąd w kontrolerze getRandomQuestions:", error);
     res
       .status(500)
       .json({ message: "Błąd podczas pobierania pytań", error: error.message });
