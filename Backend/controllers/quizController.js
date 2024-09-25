@@ -54,29 +54,27 @@ exports.getQuestionTypes = async (req, res) => {
 };
 exports.getQuestionsByType = async (req, res) => {
   const { type } = req.params;
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 20;
 
   try {
-    const filteredQuestions = await Quiz.find({ type });
+    const totalQuestions = await Quiz.countDocuments({ type });
+    const totalPages = Math.ceil(totalQuestions / limit);
+
+    const filteredQuestions = await Quiz.find({ type })
+      .skip((page - 1) * limit)
+      .limit(limit);
 
     if (filteredQuestions.length === 0) {
       return res.status(404).json({ message: "Brak pytań w tej kategorii." });
     }
 
-    res.json(filteredQuestions);
-  } catch (error) {
-    console.error("Błąd podczas pobierania pytań:", error);
-    res
-      .status(500)
-      .json({ message: "Wystąpił błąd podczas pobierania pytań." });
-  }
-};
-exports.getAllQuestions = async (req, res) => {
-  try {
-    const questions = await quizService.getAllQuestions();
-    if (questions.length === 0) {
-      return res.status(404).json({ message: "Brak pytań w bazie danych." });
-    }
-    res.json(questions);
+    res.json({
+      questions: filteredQuestions,
+      currentPage: page,
+      totalPages: totalPages,
+      totalQuestions: totalQuestions,
+    });
   } catch (error) {
     console.error("Błąd podczas pobierania pytań:", error);
     res

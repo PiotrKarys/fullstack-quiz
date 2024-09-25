@@ -4,15 +4,19 @@ const {
   resetQuiz,
   getQuestionTypes,
   getQuestionsByType,
-  getAllQuestions,
 } = require("../controllers/quizController");
+const {
+  getAllQuestions,
+  getQuestionByType,
+} = require("../controllers/questionsController");
 
 const router = express.Router();
 
-router.get("/questions/random", getRandomQuestions);
-router.get("/questions/types", getQuestionTypes);
-router.get("/questions/types/:type", getQuestionsByType);
-router.get("/questions/all", getAllQuestions);
+router.get("/random", getRandomQuestions);
+router.get("/types", getQuestionTypes);
+router.get("/types/:type", getQuestionsByType);
+router.get("/questions/", getAllQuestions);
+router.get("/questions/type", getQuestionByType);
 router.post("/reset", resetQuiz);
 
 module.exports = router;

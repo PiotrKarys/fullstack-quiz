@@ -2,6 +2,7 @@
   {
     "question": "Co to jest hoisting w JavaScript?",
     "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Podnoszenie zmiennych na początek zakresu",
@@ -15,6 +16,7 @@
   {
     "question": "Co to jest destrukturyzacja w JavaScript?",
     "type": "javascript",
+    "difficulty": "easy",
     "answers": [
       { "text": "Rozbijanie obiektów na zmienne", "isCorrect": true },
       { "text": "Tworzenie funkcji", "isCorrect": false },
@@ -25,6 +27,7 @@
   {
     "question": "Co to jest 'useState' w React?",
     "type": "react",
+    "difficulty": "easy",
     "answers": [
       {
         "text": "Funkcja do zarządzania stanem komponentu",
@@ -41,6 +44,7 @@
   {
     "question": "Jaką metodą można asynchronicznie pobrać dane w JavaScript?",
     "type": "javascript",
+    "difficulty": "easy",
     "answers": [
       { "text": "fetch()", "isCorrect": true },
       { "text": "append()", "isCorrect": false },
@@ -51,6 +55,7 @@
   {
     "question": "Co oznacza REST w kontekście API?",
     "type": "web",
+    "difficulty": "medium",
     "answers": [
       { "text": "Representational State Transfer", "isCorrect": true },
       { "text": "Remote Event Service Transfer", "isCorrect": false },
@@ -61,6 +66,7 @@
   {
     "question": "Czym jest JSX w React?",
     "type": "react",
+    "difficulty": "easy",
     "answers": [
       {
         "text": "Rozszerzeniem składni JavaScript do opisywania UI",
@@ -74,6 +80,7 @@
   {
     "question": "Co to jest middleware w Node.js?",
     "type": "nodejs",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Funkcja przetwarzająca żądania HTTP pomiędzy klientem a serwerem",
@@ -90,6 +97,7 @@
   {
     "question": "Jakie są podstawowe metody HTTP używane w REST API?",
     "type": "web",
+    "difficulty": "easy",
     "answers": [
       { "text": "GET, POST, PUT, DELETE", "isCorrect": true },
       { "text": "HEAD, OPTIONS, PATCH", "isCorrect": false },
@@ -100,6 +108,7 @@
   {
     "question": "Czym jest Promise w JavaScript?",
     "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Obiektem reprezentującym zakończenie operacji asynchronicznej",
@@ -113,6 +122,7 @@
   {
     "question": "Co to jest 'component lifecycle' w React?",
     "type": "react",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Etapy cyklu życia komponentu od jego stworzenia po usunięcie",
@@ -135,6 +145,7 @@
   {
     "question": "Jakie typy danych są dostępne w JavaScript?",
     "type": "javascript",
+    "difficulty": "easy",
     "answers": [
       {
         "text": "String, Number, Boolean, Object, Undefined, Null, Symbol",
@@ -148,6 +159,7 @@
   {
     "question": "Co robi metoda 'map()' w JavaScript?",
     "type": "javascript",
+    "difficulty": "easy",
     "answers": [
       {
         "text": "Tworzy nową tablicę z wynikami wywołania funkcji na każdym elemencie tablicy",
@@ -161,6 +173,7 @@
   {
     "question": "Co to jest Redux?",
     "type": "react",
+    "difficulty": "hard",
     "answers": [
       {
         "text": "Biblioteka do zarządzania stanem aplikacji w React",
@@ -177,6 +190,7 @@
   {
     "question": "Jakie są różnice między let, const a var w JavaScript?",
     "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "let i const mają blokowy zasięg, var ma zasięg funkcji",
@@ -193,6 +207,7 @@
   {
     "question": "Jakie są różnice między komponentem klasowym a funkcyjnym w React?",
     "type": "react",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Komponenty klasowe mogą mieć stan i cykl życia, funkcyjne mogą używać hooków",
@@ -209,6 +224,7 @@
   {
     "question": "Co to jest middleware w Express?",
     "type": "nodejs",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Funkcja, która ma dostęp do żądania, odpowiedzi i następnej funkcji w cyklu żądania-odpowiedzi",
@@ -222,6 +238,7 @@
   {
     "question": "Jakie jest zastosowanie hooka 'useContext' w React?",
     "type": "react",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Do dostępu do kontekstu w drzewie komponentów",
@@ -233,285 +250,72 @@
     ]
   },
   {
-    "question": "Czym jest CORS w kontekście API?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "Mechanizm zabezpieczeń, który pozwala na dostęp do zasobów z różnych domen",
-        "isCorrect": true
-      },
-      { "text": "Format danych używany w API", "isCorrect": false },
-      { "text": "Narzędzie do testowania API", "isCorrect": false },
-      { "text": "Protokół przesyłania danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jakie są różnice między 'null' a 'undefined' w JavaScript?",
+    "question": "Co to jest 'closure' w JavaScript?",
     "type": "javascript",
+    "difficulty": "hard",
     "answers": [
       {
-        "text": "'null' jest przypisanym brakiem wartości, a 'undefined' oznacza, że wartość nie została przypisana",
+        "text": "Funkcja wraz z jej leksykalnym środowiskiem",
         "isCorrect": true
       },
-      { "text": "'null' i 'undefined' są tym samym", "isCorrect": false },
-      {
-        "text": "'null' oznacza obiekt, a 'undefined' to typ prosty",
-        "isCorrect": false
-      },
-      {
-        "text": "'null' jest zawsze fałszywy, a 'undefined' zawsze prawdziwy",
-        "isCorrect": false
-      }
+      { "text": "Sposób na zamykanie połączeń sieciowych", "isCorrect": false },
+      { "text": "Metoda optymalizacji kodu", "isCorrect": false },
+      { "text": "Technika zabezpieczania danych", "isCorrect": false }
     ]
   },
   {
-    "question": "Jakie są podstawowe zasady działania asynchronicznego kodu w JavaScript?",
+    "question": "Co to jest 'event bubbling' w JavaScript?",
     "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Kod asynchroniczny nie blokuje głównego wątku wykonania",
-        "isCorrect": true
-      },
-      { "text": "Kod asynchroniczny jest zawsze szybszy", "isCorrect": false },
-      {
-        "text": "Kod asynchroniczny działa tylko z promesami",
-        "isCorrect": false
-      },
-      {
-        "text": "Kod asynchroniczny nie może zawierać funkcji zwrotnych",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Jakie są podstawowe metody cyklu życia komponentu klasowego w React?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "componentDidMount, componentDidUpdate, componentWillUnmount",
-        "isCorrect": true
-      },
-      { "text": "render, update, delete", "isCorrect": false },
-      { "text": "create, modify, remove", "isCorrect": false },
-      { "text": "init, run, end", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest API RESTful?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "Zbiór zasad dla projektowania API, które wykorzystuje standardowe metody HTTP",
-        "isCorrect": true
-      },
-      { "text": "Interfejs użytkownika dla aplikacji", "isCorrect": false },
-      { "text": "Typ bazy danych", "isCorrect": false },
-      { "text": "Format pliku danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jakie są główne różnice między GET a POST w HTTP?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "GET pobiera dane, a POST wysyła dane do serwera",
-        "isCorrect": true
-      },
-      { "text": "GET może mieć ciało żądania, a POST nie", "isCorrect": false },
-      { "text": "POST jest szybszy niż GET", "isCorrect": false },
-      { "text": "GET nie może być używane z formularzami", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest SSR w kontekście React?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "Server-Side Rendering, czyli renderowanie komponentów na serwerze przed wysłaniem do klienta",
-        "isCorrect": true
-      },
-      {
-        "text": "Single Page Rendering, czyli renderowanie jednej strony aplikacji",
-        "isCorrect": false
-      },
-      {
-        "text": "Static Site Rendering, czyli generowanie statycznych stron",
-        "isCorrect": false
-      },
-      {
-        "text": "Service-Side Response, czyli odpowiedź serwera",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Jakie są różnice między komponentem kontrolowanym a niekontrolowanym w React?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "Komponent kontrolowany ma stan zarządzany przez React, niekontrolowany przez DOM",
-        "isCorrect": true
-      },
-      { "text": "Nie ma różnicy między nimi", "isCorrect": false },
-      {
-        "text": "Komponent niekontrolowany jest zawsze wydajniejszy",
-        "isCorrect": false
-      },
-      {
-        "text": "Komponent kontrolowany nie może mieć stanów",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Czym jest Node.js?",
-    "type": "nodejs",
-    "answers": [
-      {
-        "text": "Środowisko uruchomieniowe JavaScript oparte na silniku V8 Google Chrome",
-        "isCorrect": true
-      },
-      {
-        "text": "Framework do budowania aplikacji internetowych",
-        "isCorrect": false
-      },
-      { "text": "Język programowania", "isCorrect": false },
-      { "text": "Baza danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest promis w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "Obiekt reprezentujący zakończoną lub nieudane asynchroniczne operacje",
-        "isCorrect": true
-      },
-      { "text": "Rodzaj funkcji", "isCorrect": false },
-      { "text": "Metoda do synchronizacji kodu", "isCorrect": false },
-      { "text": "Zmienna globalna", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jakie są różnice między stateless a stateful component w React?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "Stateless komponenty nie mają własnego stanu, stateful mają",
-        "isCorrect": true
-      },
-      { "text": "Nie ma różnicy, oba są tym samym", "isCorrect": false },
-      { "text": "Stateless komponenty są szybsze", "isCorrect": false },
-      {
-        "text": "Stateful komponenty nie mogą być renderowane",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Czym jest Express?",
-    "type": "nodejs",
-    "answers": [
-      {
-        "text": "Framework do budowania aplikacji webowych w Node.js",
-        "isCorrect": true
-      },
-      { "text": "Baza danych", "isCorrect": false },
-      { "text": "Silnik szablonów", "isCorrect": false },
-      { "text": "Narzędzie do stylizacji", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jakie są różnice między metodą 'find()' a 'filter()' w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "'find()' zwraca pierwszy element spełniający warunek, a 'filter()' zwraca tablicę wszystkich spełniających warunek",
-        "isCorrect": true
-      },
-      {
-        "text": "'filter()' zwraca pierwszy element, a 'find()' wszystkie",
-        "isCorrect": false
-      },
-      { "text": "'find()' jest szybsze od 'filter()'", "isCorrect": false },
-      { "text": "Nie ma różnicy między nimi", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jakie są zastosowania hooka 'useEffect' w React?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "Do zarządzania efektami ubocznymi, takimi jak ładowanie danych",
-        "isCorrect": true
-      },
-      { "text": "Do renderowania komponentów", "isCorrect": false },
-      { "text": "Do stylizacji komponentów", "isCorrect": false },
-      { "text": "Do tworzenia kontekstu", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest obiekt 'window' w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "Reprezentuje okno przeglądarki oraz globalny kontekst skryptu",
-        "isCorrect": true
-      },
-      { "text": "Typ danych", "isCorrect": false },
-      { "text": "Metoda do tworzenia okien modalnych", "isCorrect": false },
-      { "text": "Framework do zarządzania aplikacjami", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest event bubbling w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "Propagacja zdarzeń od elementu potomnego do rodzica",
+        "text": "Propagacja zdarzeń od elementu potomnego do przodka",
         "isCorrect": true
       },
       { "text": "Tworzenie nowych zdarzeń", "isCorrect": false },
       { "text": "Usuwanie zdarzeń z DOM", "isCorrect": false },
-      { "text": "Metoda optymalizacji kodu", "isCorrect": false }
+      { "text": "Optymalizacja obsługi zdarzeń", "isCorrect": false }
     ]
   },
   {
-    "question": "Czym jest React Fiber?",
+    "question": "Co to jest 'virtual DOM' w React?",
     "type": "react",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Nowy silnik pojednania (reconciliation) w React",
+        "text": "Lekka kopia rzeczywistego DOM używana do optymalizacji renderowania",
         "isCorrect": true
       },
-      { "text": "Biblioteka do zarządzania stanem", "isCorrect": false },
-      {
-        "text": "Narzędzie do testowania komponentów React",
-        "isCorrect": false
-      },
-      { "text": "Framework CSS dla React", "isCorrect": false }
+      { "text": "Specjalny typ komponentu React", "isCorrect": false },
+      { "text": "Narzędzie do debugowania React", "isCorrect": false },
+      { "text": "Metoda zarządzania stanem w React", "isCorrect": false }
     ]
   },
   {
-    "question": "Co to jest stream w Node.js?",
-    "type": "nodejs",
+    "question": "Co to jest 'callback hell' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Interfejs do odczytu lub zapisu danych sekwencyjnie",
+        "text": "Zagnieżdżone wywołania zwrotne prowadzące do nieczytelnego kodu",
         "isCorrect": true
       },
-      { "text": "Metoda do synchronizacji plików", "isCorrect": false },
-      { "text": "Biblioteka do obsługi baz danych", "isCorrect": false },
-      { "text": "Narzędzie do kompresji danych", "isCorrect": false }
+      { "text": "Błąd w obsłudze wyjątków", "isCorrect": false },
+      { "text": "Technika optymalizacji kodu", "isCorrect": false },
+      { "text": "Metoda debugowania asynchronicznego kodu", "isCorrect": false }
     ]
   },
   {
-    "question": "Czym jest CSS Grid?",
-    "type": "css",
+    "question": "Co to jest 'CORS' w kontekście web development?",
+    "type": "web",
+    "difficulty": "medium",
     "answers": [
-      { "text": "Dwuwymiarowy system układu stron", "isCorrect": true },
-      { "text": "Biblioteka JavaScript do animacji", "isCorrect": false },
-      { "text": "Preprocesor CSS", "isCorrect": false },
+      {
+        "text": "Mechanizm pozwalający na dostęp do zasobów z innego pochodzenia",
+        "isCorrect": true
+      },
+      { "text": "Protokół szyfrowania danych", "isCorrect": false },
+      { "text": "Metoda kompresji plików CSS", "isCorrect": false },
       {
         "text": "Framework do tworzenia responsywnych stron",
         "isCorrect": false
@@ -519,279 +323,708 @@
     ]
   },
   {
-    "question": "Co to jest memoizacja w React?",
-    "type": "react",
+    "question": "Co to jest 'memoization' w programowaniu?",
+    "type": "javascript",
+    "difficulty": "hard",
     "answers": [
       {
         "text": "Technika optymalizacji polegająca na zapamiętywaniu wyników kosztownych obliczeń",
         "isCorrect": true
       },
-      { "text": "Metoda zarządzania stanem komponentu", "isCorrect": false },
-      {
-        "text": "Sposób na tworzenie referencji do elementów DOM",
-        "isCorrect": false
-      },
-      { "text": "Technika renderowania warunkowego", "isCorrect": false }
+      { "text": "Metoda zarządzania pamięcią w aplikacji", "isCorrect": false },
+      { "text": "Sposób na tworzenie kopii obiektów", "isCorrect": false },
+      { "text": "Technika debugowania kodu", "isCorrect": false }
     ]
   },
   {
-    "question": "Co to jest WebSocket?",
+    "question": "Co to jest 'server-side rendering' w kontekście React?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Renderowanie komponentów React po stronie serwera",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji bazy danych", "isCorrect": false },
+      { "text": "Metoda zabezpieczania aplikacji React", "isCorrect": false },
+      {
+        "text": "Sposób na tworzenie statycznych stron w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'event loop' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Mechanizm obsługujący asynchroniczne operacje w JavaScript",
+        "isCorrect": true
+      },
+      { "text": "Pętla do iteracji po zdarzeniach DOM", "isCorrect": false },
+      { "text": "Metoda optymalizacji kodu JavaScript", "isCorrect": false },
+      {
+        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'prototype' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Obiekt, z którego inne obiekty dziedziczą właściwości",
+        "isCorrect": true
+      },
+      { "text": "Metoda tworzenia klas w JavaScript", "isCorrect": false },
+      { "text": "Sposób na definiowanie prywatnych metod", "isCorrect": false },
+      { "text": "Narzędzie do walidacji danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'JWT' w kontekście autoryzacji?",
     "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "JSON Web Token, sposób bezpiecznego przesyłania informacji między stronami",
+        "isCorrect": true
+      },
+      {
+        "text": "JavaScript Web Tool, narzędzie do debugowania",
+        "isCorrect": false
+      },
+      {
+        "text": "Java Web Technology, framework serwerowy",
+        "isCorrect": false
+      },
+      { "text": "JSON With Types, rozszerzenie JSON", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'lazy loading' w kontekście React?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika opóźniania ładowania komponentów do momentu, gdy są potrzebne",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda optymalizacji renderowania komponentów",
+        "isCorrect": false
+      },
+      { "text": "Sposób na zarządzanie stanem globalnym", "isCorrect": false },
+      { "text": "Technika walidacji propsów", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'currying' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Technika przekształcania funkcji wieloargumentowej w sekwencję funkcji jednoargumentowych",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji pętli", "isCorrect": false },
+      {
+        "text": "Sposób na tworzenie prywatnych zmiennych",
+        "isCorrect": false
+      },
+      { "text": "Technika debugowania rekurencji", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'WebSocket'?",
+    "type": "web",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Protokół komunikacji dwukierunkowej w czasie rzeczywistym",
         "isCorrect": true
       },
+      { "text": "Biblioteka do manipulacji DOM", "isCorrect": false },
+      { "text": "Narzędzie do testowania API", "isCorrect": false },
       {
-        "text": "Biblioteka do tworzenia animacji w przeglądarce",
-        "isCorrect": false
-      },
-      { "text": "Narzędzie do debugowania JavaScript", "isCorrect": false },
-      {
-        "text": "Format przechowywania danych w przeglądarce",
+        "text": "Framework do tworzenia aplikacji mobilnych",
         "isCorrect": false
       }
     ]
   },
   {
-    "question": "Czym jest CSS-in-JS?",
-    "type": "css",
-    "answers": [
-      {
-        "text": "Technika pisania CSS bezpośrednio w kodzie JavaScript",
-        "isCorrect": true
-      },
-      { "text": "Nowy standard CSS", "isCorrect": false },
-      { "text": "Biblioteka do animacji CSS", "isCorrect": false },
-      { "text": "Narzędzie do kompilacji CSS", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest Server-Sent Events (SSE)?",
+    "question": "Co to jest 'GraphQL'?",
     "type": "web",
-    "answers": [
-      {
-        "text": "Technologia umożliwiająca serwerowi wysyłanie aktualizacji do klienta",
-        "isCorrect": true
-      },
-      { "text": "Protokół do przesyłania plików", "isCorrect": false },
-      { "text": "Metoda szyfrowania danych", "isCorrect": false },
-      { "text": "Technika optymalizacji baz danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Shadow DOM?",
-    "type": "web",
-    "answers": [
-      { "text": "Mechanizm enkapsulacji DOM i CSS", "isCorrect": true },
-      {
-        "text": "Technika renderowania 3D w przeglądarce",
-        "isCorrect": false
-      },
-      {
-        "text": "Biblioteka do tworzenia efektów wizualnych",
-        "isCorrect": false
-      },
-      {
-        "text": "Narzędzie do testowania wydajności stron",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Co to jest GraphQL?",
-    "type": "web",
+    "difficulty": "hard",
     "answers": [
       {
         "text": "Język zapytań i manipulacji danymi dla API",
         "isCorrect": true
       },
-      { "text": "Biblioteka do tworzenia wykresów", "isCorrect": false },
       {
-        "text": "Framework do budowy aplikacji mobilnych",
+        "text": "Biblioteka do tworzenia grafów w JavaScript",
         "isCorrect": false
       },
       {
-        "text": "Narzędzie do analizy wydajności baz danych",
+        "text": "Framework do tworzenia interfejsów użytkownika",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do optymalizacji baz danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'debounce' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika ograniczania częstotliwości wykonywania funkcji",
+        "isCorrect": true
+      },
+      { "text": "Metoda usuwania duplikatów z tablicy", "isCorrect": false },
+      {
+        "text": "Sposób na obsługę błędów asynchronicznych",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do debugowania zdarzeń", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Docker' w kontekście rozwoju oprogramowania?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Platforma do tworzenia, wdrażania i uruchamiania aplikacji w kontenerach",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do automatyzacji testów", "isCorrect": false },
+      { "text": "System zarządzania bazami danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'prop drilling' w React?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Przekazywanie propsów przez wiele poziomów komponentów",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji renderowania", "isCorrect": false },
+      { "text": "Metoda walidacji propsów", "isCorrect": false },
+      {
+        "text": "Sposób na tworzenie reużywalnych komponentów",
         "isCorrect": false
       }
     ]
   },
   {
-    "question": "Czym jest Web Workers API?",
+    "question": "Co to jest 'TDD' w programowaniu?",
     "type": "web",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "API umożliwiające uruchamianie skryptów w tle",
+        "text": "Test-Driven Development, podejście do tworzenia oprogramowania zaczynające od testów",
         "isCorrect": true
       },
       {
-        "text": "Narzędzie do zarządzania pracownikami w firmie IT",
+        "text": "Type-Driven Design, metoda projektowania oparta na typach",
         "isCorrect": false
+      },
+      {
+        "text": "Time-Dependent Debugging, technika debugowania",
+        "isCorrect": false
+      },
+      {
+        "text": "Timed Data Delivery, metoda optymalizacji baz danych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'tree shaking' w kontekście budowania aplikacji JavaScript?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Technika usuwania nieużywanego kodu z bundle'a",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji drzewa DOM", "isCorrect": false },
+      { "text": "Sposób na zarządzanie zależnościami", "isCorrect": false },
+      { "text": "Narzędzie do analizy wydajności kodu", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'serverless' w kontekście architektury aplikacji?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Model chmury, gdzie dostawca zarządza infrastrukturą serwerową",
+        "isCorrect": true
+      },
+      { "text": "Aplikacja działająca bez backendu", "isCorrect": false },
+      { "text": "Technika optymalizacji baz danych", "isCorrect": false },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'CSS-in-JS'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika pisania CSS bezpośrednio w kodzie JavaScript",
+        "isCorrect": true
+      },
+      { "text": "Framework CSS", "isCorrect": false },
+      { "text": "Metoda optymalizacji stylów CSS", "isCorrect": false },
+      { "text": "Narzędzie do debugowania stylów", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'PWA'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Progressive Web App, aplikacja webowa działająca jak natywna",
+        "isCorrect": true
+      },
+      {
+        "text": "Professional Web Architecture, wzorzec projektowy",
+        "isCorrect": false
+      },
+      {
+        "text": "Programmatic Web Access, metoda dostępu do API",
+        "isCorrect": false
+      },
+      {
+        "text": "Performance Web Analysis, narzędzie do analizy wydajności",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'SSG' w kontekście tworzenia stron internetowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Static Site Generation, generowanie statycznych stron HTML w czasie budowania",
+        "isCorrect": true
+      },
+      {
+        "text": "Server Side Graphics, technika renderowania grafiki",
+        "isCorrect": false
+      },
+      {
+        "text": "Secure Socket Gateway, protokół bezpieczeństwa",
+        "isCorrect": false
+      },
+      {
+        "text": "Style Sheet Generator, narzędzie do generowania CSS",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'BEM' w kontekście CSS?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Block Element Modifier, metodologia nazewnictwa klas CSS",
+        "isCorrect": true
+      },
+      {
+        "text": "Browser Extension Manager, narzędzie do zarządzania rozszerzeniami",
+        "isCorrect": false
+      },
+      {
+        "text": "Backend Event Monitoring, system monitorowania zdarzeń",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundled External Modules, technika zarządzania zależnościami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Webpack'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do budowania i pakowania aplikacji JavaScript",
+        "isCorrect": true
       },
       {
         "text": "Framework do tworzenia aplikacji webowych",
         "isCorrect": false
       },
-      { "text": "Biblioteka do obsługi formularzy", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest CSS Custom Properties (zmienne CSS)?",
-    "type": "css",
-    "answers": [
-      {
-        "text": "Mechanizm definiowania własnych zmiennych w CSS",
-        "isCorrect": true
-      },
-      {
-        "text": "Narzędzie do generowania niestandardowych stylów",
-        "isCorrect": false
-      },
-      { "text": "Biblioteka do animacji CSS", "isCorrect": false },
-      { "text": "Technika optymalizacji selektorów CSS", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Intersection Observer API?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "API do wykrywania widoczności elementów na stronie",
-        "isCorrect": true
-      },
-      { "text": "Narzędzie do analizy ruchu na stronie", "isCorrect": false },
-      {
-        "text": "Biblioteka do tworzenia efektów paralaksy",
-        "isCorrect": false
-      },
-      {
-        "text": "Technika optymalizacji ładowania obrazów",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Co to jest Progressive Enhancement?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "Strategia tworzenia stron internetowych, zaczynając od podstawowej funkcjonalności",
-        "isCorrect": true
-      },
-      {
-        "text": "Technika optymalizacji wydajności strony",
-        "isCorrect": false
-      },
-      { "text": "Metoda tworzenia animacji w CSS", "isCorrect": false },
-      {
-        "text": "Framework do budowy aplikacji mobilnych",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Czym jest Web Components?",
-    "type": "web",
-    "answers": [
-      {
-        "text": "Zestaw technologii do tworzenia własnych, enkapsulowanych elementów HTML",
-        "isCorrect": true
-      },
-      { "text": "Biblioteka komponentów UI", "isCorrect": false },
-      {
-        "text": "Narzędzie do testowania interfejsu użytkownika",
-        "isCorrect": false
-      },
-      {
-        "text": "Framework do tworzenia aplikacji jednostronnicowych",
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "question": "Co to jest CSS Grid Layout?",
-    "type": "css",
-    "answers": [
-      {
-        "text": "Dwuwymiarowy system układu stron oparty na siatce",
-        "isCorrect": true
-      },
-      { "text": "Jednowymiarowy system układu elementów", "isCorrect": false },
-      { "text": "Biblioteka do animacji CSS", "isCorrect": false },
-      { "text": "Preprocesor CSS", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest event delegation w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "Technika obsługi zdarzeń dla wielu elementów za pomocą jednego nasłuchiwacza",
-        "isCorrect": true
-      },
-      { "text": "Metoda tworzenia własnych zdarzeń", "isCorrect": false },
-      {
-        "text": "Sposób na blokowanie domyślnych akcji zdarzeń",
-        "isCorrect": false
-      },
-      { "text": "Technika optymalizacji pętli zdarzeń", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest React.memo()?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "Funkcja wyższego rzędu do optymalizacji renderowania komponentów funkcyjnych",
-        "isCorrect": true
-      },
-      { "text": "Hook do zapamiętywania wartości", "isCorrect": false },
-      { "text": "Metoda cyklu życia komponentu klasowego", "isCorrect": false },
-      { "text": "Funkcja do tworzenia referencji", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Node.js Cluster?",
-    "type": "nodejs",
-    "answers": [
-      {
-        "text": "Moduł umożliwiający tworzenie procesów potomnych do obsługi obciążenia",
-        "isCorrect": true
-      },
       { "text": "System zarządzania bazami danych", "isCorrect": false },
+      { "text": "Biblioteka do testowania kodu JavaScript", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'SEO' w kontekście tworzenia stron internetowych?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
       {
-        "text": "Narzędzie do monitorowania wydajności aplikacji",
+        "text": "Search Engine Optimization, optymalizacja dla wyszukiwarek internetowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Server Error Output, system logowania błędów serwera",
         "isCorrect": false
       },
       {
-        "text": "Biblioteka do tworzenia interfejsów graficznych",
+        "text": "Secure Encryption Option, metoda szyfrowania danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Style Enhancement Operations, techniki ulepszania CSS",
         "isCorrect": false
       }
     ]
   },
   {
-    "question": "Co to jest CSS pseudo-element ::before?",
-    "type": "css",
+    "question": "Co to jest 'SPA' w kontekście aplikacji webowych?",
+    "type": "web",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Element tworzony przed zawartością wybranego elementu",
+        "text": "Single Page Application, aplikacja działająca w ramach jednej strony",
         "isCorrect": true
       },
       {
-        "text": "Selektor do wybierania pierwszego dziecka",
+        "text": "Server Processing Application, aplikacja przetwarzająca dane na serwerze",
         "isCorrect": false
       },
       {
-        "text": "Właściwość określająca marginesy elementu",
+        "text": "Secure Protocol Architecture, architektura bezpiecznych protokołów",
         "isCorrect": false
       },
-      { "text": "Metoda animacji w CSS", "isCorrect": false }
+      {
+        "text": "Style Preprocessing Algorithm, algorytm przetwarzania stylów",
+        "isCorrect": false
+      }
     ]
   },
   {
-    "question": "Czym jest closure w JavaScript?",
+    "question": "Co to jest 'ORM' w kontekście baz danych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Object-Relational Mapping, technika mapowania obiektów na relacyjne bazy danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Online Resource Management, system zarządzania zasobami online",
+        "isCorrect": false
+      },
+      {
+        "text": "Optimized Runtime Memory, zoptymalizowana pamięć wykonawcza",
+        "isCorrect": false
+      },
+      {
+        "text": "Output Rendering Module, moduł renderowania wyjścia",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'CDN' w kontekście dostarczania treści w internecie?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Content Delivery Network, sieć serwerów do szybkiego dostarczania treści",
+        "isCorrect": true
+      },
+      {
+        "text": "Compressed Data Network, sieć do kompresji danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Central Database Node, centralny węzeł bazy danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Cascading Design Network, sieć do kaskadowego projektowania",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'CI/CD' w kontekście rozwoju oprogramowania?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Continuous Integration/Continuous Deployment, ciągła integracja i wdrażanie",
+        "isCorrect": true
+      },
+      {
+        "text": "Code Inspection/Code Debugging, inspekcja i debugowanie kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Central Interface/Component Design, projektowanie interfejsu i komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Compiled Integration/Compiled Deployment, skompilowana integracja i wdrażanie",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'SOLID' w programowaniu obiektowym?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Zestaw pięciu zasad projektowania oprogramowania",
+        "isCorrect": true
+      },
+      { "text": "System optymalizacji kodu", "isCorrect": false },
+      { "text": "Framework do testowania aplikacji", "isCorrect": false },
+      { "text": "Metoda zarządzania projektem", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'AJAX' w kontekście aplikacji webowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Asynchronous JavaScript and XML, technika asynchronicznego komunikowania się z serwerem",
+        "isCorrect": true
+      },
+      {
+        "text": "Advanced JavaScript Application Xecution, zaawansowane wykonywanie aplikacji JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Automated JSON API Xtraction, automatyczna ekstrakcja API JSON",
+        "isCorrect": false
+      },
+      {
+        "text": "Active Java Applet Xchange, aktywna wymiana apletów Java",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'JWT' w kontekście autoryzacji?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "JSON Web Token, sposób bezpiecznego przesyłania informacji między stronami",
+        "isCorrect": true
+      },
+      {
+        "text": "Java Web Toolkit, zestaw narzędzi do tworzenia aplikacji webowych w Java",
+        "isCorrect": false
+      },
+      {
+        "text": "JavaScript Worker Thread, wątek pracownika JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "JSON With Types, rozszerzenie JSON z typami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Flexbox' w CSS?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Model układu pozwalający na elastyczne rozmieszczanie elementów",
+        "isCorrect": true
+      },
+      { "text": "Biblioteka do animacji CSS", "isCorrect": false },
+      { "text": "Narzędzie do kompresji plików CSS", "isCorrect": false },
+      {
+        "text": "Framework do tworzenia responsywnych stron",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'npm' w kontekście rozwoju aplikacji JavaScript?",
     "type": "javascript",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Node Package Manager, menedżer pakietów dla Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "New Programming Method, nowa metoda programowania",
+        "isCorrect": false
+      },
+      {
+        "text": "Network Protocol Monitor, monitor protokołów sieciowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Nested Program Module, zagnieżdżony moduł programu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Redux' w kontekście aplikacji React?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do zarządzania stanem aplikacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania komponentów React",
+        "isCorrect": false
+      },
+      { "text": "System routingu dla aplikacji React", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'TypeScript'?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Nadzbiór JavaScript dodający statyczne typowanie",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do testowania kodu JavaScript",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do kompilacji JavaScript", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'REST API'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Representational State Transfer, styl architektury dla systemów rozproszonych",
+        "isCorrect": true
+      },
+      {
+        "text": "React Easy State Transfer, narzędzie do zarządzania stanem w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Rapid Execution Software Tool API, narzędzie do szybkiego wykonywania API",
+        "isCorrect": false
+      },
+      {
+        "text": "Remote Encryption System Transfer API, system zdalnego transferu szyfrowania",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Git'?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "System kontroli wersji",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      { "text": "Język programowania", "isCorrect": false },
+      { "text": "Baza danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'SQL'?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Structured Query Language, język zapytań do baz danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Server Quick Link, szybkie łącze serwerowe",
+        "isCorrect": false
+      },
+      {
+        "text": "Secure Query Log, bezpieczny dziennik zapytań",
+        "isCorrect": false
+      },
+      {
+        "text": "System Quality Level, poziom jakości systemu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'DOM' w kontekście programowania webowego?",
+    "type": "web",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Document Object Model, reprezentacja struktury dokumentu HTML/XML",
+        "isCorrect": true
+      },
+      {
+        "text": "Data Object Management, zarządzanie obiektami danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Dynamic Optimization Method, metoda dynamicznej optymalizacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Distributed Object Memory, rozproszona pamięć obiektów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'closure' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
     "answers": [
       {
         "text": "Funkcja wraz z jej leksykalnym środowiskiem",
@@ -801,113 +1034,518 @@
         "text": "Metoda zamykania połączenia z bazą danych",
         "isCorrect": false
       },
-      { "text": "Operator porównania obiektów", "isCorrect": false },
-      { "text": "Technika optymalizacji pętli", "isCorrect": false }
+      { "text": "Technika optymalizacji pętli", "isCorrect": false },
+      { "text": "Sposób na hermetyzację danych w klasach", "isCorrect": false }
     ]
   },
   {
-    "question": "Co to jest React Portal?",
+    "question": "Co to jest 'Virtual DOM' w React?",
     "type": "react",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Mechanizm renderowania komponentów poza ich domyślną hierarchią DOM",
+        "text": "Lekka kopia rzeczywistego DOM używana do optymalizacji renderowania",
         "isCorrect": true
       },
-      { "text": "Narzędzie do tworzenia animacji przejść", "isCorrect": false },
       {
-        "text": "Biblioteka do zarządzania stanem aplikacji",
+        "text": "Biblioteka do tworzenia wirtualnych komponentów",
         "isCorrect": false
       },
-      { "text": "Komponent do tworzenia modali", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Node.js Stream?",
-    "type": "nodejs",
-    "answers": [
       {
-        "text": "Interfejs do odczytu lub zapisu danych kawałek po kawałku",
-        "isCorrect": true
-      },
-      { "text": "Metoda przesyłania plików przez sieć", "isCorrect": false },
-      { "text": "Biblioteka do strumieniowania wideo", "isCorrect": false },
-      { "text": "Narzędzie do kompresji danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest CSS Flexbox?",
-    "type": "css",
-    "answers": [
-      {
-        "text": "Jednowymiarowy system układu elementów",
-        "isCorrect": true
-      },
-      { "text": "Technika animacji elementów", "isCorrect": false },
-      {
-        "text": "Metoda definiowania niestandardowych czcionek",
+        "text": "Technika renderowania po stronie serwera",
         "isCorrect": false
       },
-      { "text": "Narzędzie do optymalizacji CSS", "isCorrect": false }
+      { "text": "Narzędzie do debugowania aplikacji React", "isCorrect": false }
     ]
   },
   {
-    "question": "Czym jest memoizacja w JavaScript?",
+    "question": "Co to jest 'CORS' w kontekście aplikacji webowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Cross-Origin Resource Sharing, mechanizm kontroli dostępu do zasobów z innego pochodzenia",
+        "isCorrect": true
+      },
+      {
+        "text": "Central Object Rendering System, system renderowania obiektów",
+        "isCorrect": false
+      },
+      {
+        "text": "Compiled Object Reference Scheme, schemat referencji skompilowanych obiektów",
+        "isCorrect": false
+      },
+      {
+        "text": "Custom Origin Response Setup, konfiguracja niestandardowych odpowiedzi",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Event Bubbling' w JavaScript?",
     "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Propagacja zdarzeń od elementu potomnego do przodka w drzewie DOM",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji obsługi zdarzeń", "isCorrect": false },
+      {
+        "text": "Metoda tworzenia niestandardowych zdarzeń",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na blokowanie domyślnych akcji zdarzeń",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Memoization' w programowaniu?",
+    "type": "javascript",
+    "difficulty": "hard",
     "answers": [
       {
         "text": "Technika optymalizacji polegająca na zapamiętywaniu wyników kosztownych obliczeń",
         "isCorrect": true
       },
-      { "text": "Metoda zarządzania pamięcią", "isCorrect": false },
+      { "text": "Metoda zarządzania pamięcią w aplikacji", "isCorrect": false },
+      { "text": "Sposób na tworzenie kopii obiektów", "isCorrect": false },
       {
-        "text": "Sposób na tworzenie prywatnych zmiennych",
+        "text": "Technika debugowania rekurencyjnych funkcji",
         "isCorrect": false
-      },
-      { "text": "Technika debugowania kodu", "isCorrect": false }
+      }
     ]
   },
   {
-    "question": "Co to jest React.lazy()?",
+    "question": "Co to jest 'Webpack'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do budowania i pakowania aplikacji JavaScript",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem aplikacji",
+        "isCorrect": false
+      },
+      { "text": "System zarządzania bazami danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Async/Await' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Składnia ułatwiająca pracę z kodem asynchronicznym",
+        "isCorrect": true
+      },
+      { "text": "Metoda synchronizacji wątków", "isCorrect": false },
+      {
+        "text": "Biblioteka do zarządzania czasem wykonania funkcji",
+        "isCorrect": false
+      },
+      { "text": "Technika optymalizacji pętli", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Redux Thunk'?",
     "type": "react",
+    "difficulty": "hard",
     "answers": [
       {
-        "text": "Funkcja do dynamicznego importowania komponentów",
-        "isCorrect": true
-      },
-      { "text": "Hook do opóźniania renderowania", "isCorrect": false },
-      { "text": "Metoda optymalizacji renderowania list", "isCorrect": false },
-      { "text": "Narzędzie do lazy loading obrazów", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Node.js EventEmitter?",
-    "type": "nodejs",
-    "answers": [
-      {
-        "text": "Klasa umożliwiająca obsługę i emisję zdarzeń",
+        "text": "Middleware do obsługi asynchronicznych akcji w Redux",
         "isCorrect": true
       },
       {
-        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "text": "Narzędzie do debugowania aplikacji Redux",
         "isCorrect": false
       },
       {
-        "text": "Biblioteka do tworzenia interfejsów użytkownika",
+        "text": "Biblioteka do zarządzania routingiem w React",
         "isCorrect": false
       },
-      { "text": "Moduł do zarządzania procesami", "isCorrect": false }
+      {
+        "text": "Technika optymalizacji renderowania komponentów",
+        "isCorrect": false
+      }
     ]
   },
   {
-    "question": "Co to jest CSS preprocessor?",
-    "type": "css",
+    "question": "Co to jest 'CSS Grid'?",
+    "type": "web",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Narzędzie rozszerzające możliwości CSS o zmienne, funkcje i inne",
+        "text": "Dwuwymiarowy system układu stron w CSS",
         "isCorrect": true
       },
-      { "text": "Program do kompresji plików CSS", "isCorrect": false },
-      { "text": "Biblioteka animacji CSS", "isCorrect": false },
+      { "text": "Biblioteka do animacji CSS", "isCorrect": false },
+      { "text": "Narzędzie do generowania stylów CSS", "isCorrect": false },
+      { "text": "Technika optymalizacji selektorów CSS", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Babel' w kontekście JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Transpilator JavaScript, konwertujący nowe wersje JS na starsze",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do testowania kodu JavaScript",
+        "isCorrect": false
+      },
+      { "text": "System zarządzania pakietami", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Lazy Loading' w kontekście aplikacji webowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika opóźniania ładowania zasobów do momentu, gdy są potrzebne",
+        "isCorrect": true
+      },
+      { "text": "Metoda przyspieszania ładowania strony", "isCorrect": false },
+      { "text": "Sposób na optymalizację bazy danych", "isCorrect": false },
+      { "text": "Narzędzie do kompresji obrazów", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Prop Drilling' w React?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Przekazywanie propsów przez wiele poziomów komponentów",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji renderowania komponentów",
+        "isCorrect": false
+      },
+      { "text": "Metoda tworzenia dynamicznych propsów", "isCorrect": false },
+      { "text": "Narzędzie do debugowania propsów", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'WebAssembly'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Niskopoziomowy język dla przeglądarek internetowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do kompresji kodu JavaScript", "isCorrect": false },
+      { "text": "Biblioteka do manipulacji DOM", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Currying' w programowaniu funkcyjnym?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Technika przekształcania funkcji wieloargumentowej w sekwencję funkcji jednoargumentowych",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji rekurencji", "isCorrect": false },
+      {
+        "text": "Sposób na tworzenie funkcji wyższego rzędu",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika zarządzania pamięcią w aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Server-Side Rendering' (SSR)?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Renderowanie aplikacji po stronie serwera przed wysłaniem do klienta",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji bazy danych", "isCorrect": false },
+      {
+        "text": "Metoda zabezpieczania aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania wydajności serwerów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Microfrontends'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Architektura dzieląca frontend na niezależne, mniejsze aplikacje",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji małych komponentów UI",
+        "isCorrect": false
+      },
+      { "text": "Framework do tworzenia mikroserwisów", "isCorrect": false },
+      {
+        "text": "Narzędzie do zarządzania małymi projektami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Storybook' w kontekście rozwoju frontendu?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do izolowanego rozwoju i testowania komponentów UI",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interaktywnych historii użytkownika",
+        "isCorrect": false
+      },
+      { "text": "Biblioteka do animacji w React", "isCorrect": false },
+      {
+        "text": "System zarządzania treścią dla aplikacji webowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Shadow DOM'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Mechanizm enkapsulacji DOM i CSS dla komponentów webowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika renderowania ukrytych elementów DOM",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do tworzenia efektów cienia w CSS",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do debugowania struktury DOM", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Cypress' w kontekście testowania?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Framework do testowania end-to-end aplikacji webowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do testów jednostkowych w JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatyzacji procesów CI/CD",
+        "isCorrect": false
+      },
+      {
+        "text": "System do monitorowania wydajności aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Web Components'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Zestaw technologii do tworzenia własnych, enkapsulowanych elementów HTML",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do budowania responsywnych stron internetowych",
+        "isCorrect": false
+      },
+      { "text": "Biblioteka komponentów UI dla React", "isCorrect": false },
+      {
+        "text": "Narzędzie do optymalizacji wydajności stron internetowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Webpack Dev Server'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Serwer deweloperski z hot reloadingiem dla aplikacji Webpack",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do testowania wydajności serwerów produkcyjnych",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania bazami danych dla aplikacji webowych",
+        "isCorrect": false
+      },
+      { "text": "Framework do tworzenia serwerów Node.js", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'CSS-in-JS'?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika pisania stylów CSS bezpośrednio w kodzie JavaScript",
+        "isCorrect": true
+      },
+      { "text": "Biblioteka do optymalizacji stylów CSS", "isCorrect": false },
+      {
+        "text": "Narzędzie do konwersji CSS na JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia animacji w JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'GraphQL'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Język zapytań i manipulacji danymi dla API",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do wizualizacji danych w formie grafów",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia baz danych grafowych",
+        "isCorrect": false
+      },
+      { "text": "Narzędzie do optymalizacji zapytań SQL", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Progressive Enhancement' w kontekście tworzenia stron internetowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Strategia projektowania zaczynająca od podstawowej funkcjonalności i stopniowo dodająca zaawansowane funkcje",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji wydajności strony",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia animacji na stronach internetowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia progresywnych aplikacji webowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Web Workers'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Wątki JavaScript działające w tle, niezależne od głównego wątku",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do tworzenia animacji w JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności stron internetowych",
+        "isCorrect": false
+      },
+      { "text": "Framework do tworzenia serwerów Node.js", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Serverless Computing'?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Model chmury, w którym dostawca zarządza infrastrukturą serwerową",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia aplikacji bez użycia serwerów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji baz danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji desktopowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Web Accessibility' (a11y)?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Praktyka tworzenia stron internetowych dostępnych dla wszystkich użytkowników, w tym osób z niepełnosprawnościami",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji stron dla wyszukiwarek",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda zabezpieczania stron przed atakami hakerskimi",
+        "isCorrect": false
+      },
       {
         "text": "Framework do tworzenia responsywnych layoutów",
         "isCorrect": false
@@ -915,282 +1553,986 @@
     ]
   },
   {
-    "question": "Czym jest prototype w JavaScript?",
-    "type": "javascript",
+    "question": "Co to jest 'Service Worker' w kontekście aplikacji webowych?",
+    "type": "web",
+    "difficulty": "hard",
     "answers": [
       {
-        "text": "Obiekt, z którego inne obiekty dziedziczą właściwości i metody",
-        "isCorrect": true
-      },
-      { "text": "Funkcja do tworzenia klas", "isCorrect": false },
-      { "text": "Metoda kopiowania obiektów", "isCorrect": false },
-      { "text": "Operator porównywania typów", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest React Context?",
-    "type": "react",
-    "answers": [
-      {
-        "text": "API do przekazywania danych przez drzewo komponentów bez props",
+        "text": "Skrypt działający w tle, umożliwiający funkcje offline i push notyfikacje",
         "isCorrect": true
       },
       {
-        "text": "Narzędzie do zarządzania stanem globalnym",
+        "text": "Narzędzie do zarządzania pracownikami w firmie IT",
         "isCorrect": false
       },
-      { "text": "Metoda optymalizacji renderowania", "isCorrect": false },
-      { "text": "Biblioteka do obsługi formularzy", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest Node.js Buffer?",
-    "type": "nodejs",
-    "answers": [
       {
-        "text": "Klasa do pracy z danymi binarnymi",
-        "isCorrect": true
-      },
-      {
-        "text": "Narzędzie do buforowania zapytań do bazy danych",
+        "text": "Biblioteka do obsługi żądań HTTP",
         "isCorrect": false
       },
-      { "text": "Metoda optymalizacji wydajności serwera", "isCorrect": false },
-      { "text": "Biblioteka do kompresji danych", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co to jest CSS specificity?",
-    "type": "css",
-    "answers": [
       {
-        "text": "Algorytm określający, które style CSS powinny być zastosowane do elementu",
-        "isCorrect": true
-      },
-      { "text": "Technika optymalizacji selektorów CSS", "isCorrect": false },
-      {
-        "text": "Metoda definiowania niestandardowych właściwości CSS",
-        "isCorrect": false
-      },
-      { "text": "Narzędzie do debugowania stylów", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Czym jest currying w JavaScript?",
-    "type": "javascript",
-    "answers": [
-      {
-        "text": "Technika przekształcania funkcji wieloargumentowej w sekwencję funkcji jednoargumentowych",
-        "isCorrect": true
-      },
-      { "text": "Metoda optymalizacji pętli", "isCorrect": false },
-      { "text": "Sposób na tworzenie prywatnych metod", "isCorrect": false },
-      {
-        "text": "Technika debugowania kodu asynchronicznego",
+        "text": "Framework do tworzenia mikrousług",
         "isCorrect": false
       }
     ]
   },
   {
-    "question": "Co to jest React Suspense?",
-    "type": "react",
+    "question": "Co zwróci następujący kod JavaScript: `console.log(typeof typeof 1);`?",
+    "type": "code",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "string", "isCorrect": true },
+      { "text": "number", "isCorrect": false },
+      { "text": "undefined", "isCorrect": false },
+      { "text": "object", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik wykonania tego kodu React: `const [count, setCount] = useState(0);`?",
+    "type": "code",
+    "difficulty": "easy",
     "answers": [
       {
-        "text": "Komponent do obsługi opóźnionego renderowania i ładowania danych",
+        "text": "Utworzenie stanu 'count' z wartością początkową 0",
         "isCorrect": true
       },
-      { "text": "Hook do zarządzania stanem aplikacji", "isCorrect": false },
-      { "text": "Narzędzie do testowania komponentów", "isCorrect": false },
-      { "text": "Biblioteka do tworzenia animacji", "isCorrect": false }
+      { "text": "Błąd składni", "isCorrect": false },
+      { "text": "Utworzenie tablicy z dwoma elementami", "isCorrect": false },
+      { "text": "Deklaracja funkcji setCount", "isCorrect": false }
     ]
   },
   {
-    "question": "Czym jest Node.js child_process?",
-    "type": "nodejs",
-    "answers": [
-      {
-        "text": "Moduł umożliwiający tworzenie procesów potomnych",
-        "isCorrect": true
-      },
-      { "text": "Narzędzie do zarządzania pamięcią", "isCorrect": false },
-      { "text": "Biblioteka do obsługi wielowątkowości", "isCorrect": false },
-      { "text": "System do zarządzania zależnościami", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co wyświetli poniższy kod HTML?\n<p>Hello <strong>World</strong>!</p>",
+    "question": "Co zwróci `[1, 2, 3].map(num => num * 2);`?",
     "type": "code",
+    "difficulty": "easy",
     "answers": [
-      { "text": "Hello World!", "isCorrect": false },
-      { "text": "Hello <strong>World</strong>!", "isCorrect": false },
-      {
-        "text": "Hello World! (z pogrubionym słowem 'World')",
-        "isCorrect": true
-      },
-      { "text": "<p>Hello <strong>World</strong>!</p>", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jaki kolor będzie miał tekst po zastosowaniu poniższego CSS?\n.text { color: #FF0000; }",
-    "type": "code",
-    "answers": [
-      { "text": "Niebieski", "isCorrect": false },
-      { "text": "Zielony", "isCorrect": false },
-      { "text": "Czerwony", "isCorrect": true },
-      { "text": "Czarny", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co wyświetli poniższy kod React?\nfunction Welcome(props) {\n  return <h1>Hello, {props.name}</h1>;\n}\n\n<Welcome name=\"Alice\" />",
-    "type": "code",
-    "answers": [
-      { "text": "Hello, props.name", "isCorrect": false },
-      { "text": "Hello, Alice", "isCorrect": true },
-      { "text": "Hello, {props.name}", "isCorrect": false },
-      { "text": "Error", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jaki będzie wynik wykonania poniższego kodu JavaScript?\nconsole.log(2 + '2');",
-    "type": "code",
-    "answers": [
-      { "text": "4", "isCorrect": false },
-      { "text": "22", "isCorrect": true },
-      { "text": "NaN", "isCorrect": false },
-      { "text": "Error", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co zrobi poniższy kod Node.js?\nconst fs = require('fs');\nfs.readFile('test.txt', 'utf8', (err, data) => {\n  if (err) throw err;\n  console.log(data);\n});",
-    "type": "code",
-    "answers": [
-      { "text": "Zapisze dane do pliku test.txt", "isCorrect": false },
-      {
-        "text": "Odczyta zawartość pliku test.txt i wyświetli ją w konsoli",
-        "isCorrect": true
-      },
-      { "text": "Usunie plik test.txt", "isCorrect": false },
-      { "text": "Wyświetli błąd", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Jaki będzie wynik poniższego kodu JavaScript?\nlet x = 5;\nconsole.log(x++);",
-    "type": "code",
-    "answers": [
-      { "text": "5", "isCorrect": true },
-      { "text": "6", "isCorrect": false },
+      { "text": "[2, 4, 6]", "isCorrect": true },
+      { "text": "[1, 2, 3]", "isCorrect": false },
       { "text": "undefined", "isCorrect": false },
       { "text": "Error", "isCorrect": false }
     ]
   },
   {
-    "question": "Co wyświetli poniższy kod HTML?\n<ul>\n  <li>Apple</li>\n  <li>Banana</li>\n  <li>Orange</li>\n</ul>",
+    "question": "Jaki będzie wynik tego kodu CSS: `div { width: calc(100% - 20px); }`?",
     "type": "code",
+    "difficulty": "medium",
     "answers": [
-      { "text": "Lista numerowana z trzema owocami", "isCorrect": false },
-      { "text": "Lista wypunktowana z trzema owocami", "isCorrect": true },
-      { "text": "Trzy linie tekstu z nazwami owoców", "isCorrect": false },
+      {
+        "text": "Szerokość diva będzie o 20px mniejsza niż szerokość rodzica",
+        "isCorrect": true
+      },
+      { "text": "Szerokość diva będzie wynosić 100%", "isCorrect": false },
+      { "text": "Błąd składni CSS", "isCorrect": false },
+      { "text": "Szerokość diva będzie wynosić 80%", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `['a', 'b', 'c'].reduce((acc, curr) => acc + curr, '');`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "'abc'", "isCorrect": true },
+      { "text": "['a', 'b', 'c']", "isCorrect": false },
+      { "text": "undefined", "isCorrect": false },
       { "text": "Error", "isCorrect": false }
     ]
   },
   {
-    "question": "Jaki będzie efekt zastosowania poniższego CSS?\n.box { margin: 10px 20px; }",
+    "question": "Jaki będzie efekt tego kodu React: `useEffect(() => { console.log('Effect'); }, []);`?",
     "type": "code",
-    "answers": [
-      { "text": "Margines 10px z każdej strony", "isCorrect": false },
-      { "text": "Margines 20px z każdej strony", "isCorrect": false },
-      { "text": "Margines 10px góra/dół, 20px lewo/prawo", "isCorrect": true },
-      { "text": "Margines 20px góra/dół, 10px lewo/prawo", "isCorrect": false }
-    ]
-  },
-  {
-    "question": "Co wyświetli poniższy kod React?\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(count + 1)}>\n      Clicks: {count}\n    </button>\n  );\n}",
-    "type": "code",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Przycisk z tekstem 'Clicks: 0', który zwiększa licznik po kliknięciu",
+        "text": "Efekt wykona się tylko raz, po pierwszym renderowaniu komponentu",
         "isCorrect": true
       },
       {
-        "text": "Przycisk z tekstem 'Clicks: ', który nie reaguje na kliknięcia",
+        "text": "Efekt będzie wykonywany przy każdym renderowaniu",
         "isCorrect": false
       },
-      { "text": "Error, brakuje importu useState", "isCorrect": false },
-      { "text": "Pusty przycisk bez tekstu", "isCorrect": false }
+      { "text": "Błąd składni", "isCorrect": false },
+      { "text": "Nic się nie stanie", "isCorrect": false }
     ]
   },
   {
-    "question": "Jaki będzie wynik poniższego kodu JavaScript?\nconst arr = [1, 2, 3, 4, 5];\nconsole.log(arr.filter(num => num % 2 === 0));",
+    "question": "Co zwróci `Promise.all([Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]);`?",
     "type": "code",
+    "difficulty": "hard",
     "answers": [
-      { "text": "[1, 3, 5]", "isCorrect": false },
-      { "text": "[2, 4]", "isCorrect": true },
-      { "text": "[1, 2, 3, 4, 5]", "isCorrect": false },
-      { "text": "[]", "isCorrect": false }
+      { "text": "Promise rozwiązaną z tablicą [1, 2, 3]", "isCorrect": true },
+      { "text": "1", "isCorrect": false },
+      { "text": "[Promise, Promise, Promise]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
     ]
   },
   {
-    "question": "Co zrobi poniższy kod Node.js?\nconst http = require('http');\nhttp.createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello World');\n}).listen(8080);",
+    "question": "Jaki będzie wynik tego kodu TypeScript: `type T = keyof { a: string, b: number };`?",
     "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "T będzie typem 'a' | 'b'", "isCorrect": true },
+      { "text": "T będzie typem string | number", "isCorrect": false },
+      { "text": "Błąd kompilacji", "isCorrect": false },
+      { "text": "T będzie typem any", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `new Set([1,2,3,3,2,1]);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Set z wartościami {1, 2, 3}", "isCorrect": true },
+      { "text": "[1, 2, 3, 3, 2, 1]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false },
+      { "text": "{1: true, 2: true, 3: true}", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `@media (max-width: 600px) { .box { display: none; } }`?",
+    "type": "code",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Utworzy serwer HTTP nasłuchujący na porcie 8080",
+        "text": "Element .box będzie ukryty dla ekranów o szerokości 600px lub mniejszej",
         "isCorrect": true
       },
-      { "text": "Wyśle żądanie HTTP do serwera", "isCorrect": false },
-      { "text": "Wyświetli 'Hello World' w konsoli", "isCorrect": false },
-      { "text": "Zakończy działanie serwera", "isCorrect": false }
+      {
+        "text": "Element .box będzie widoczny tylko dla ekranów o szerokości 600px lub mniejszej",
+        "isCorrect": false
+      },
+      { "text": "Błąd składni CSS", "isCorrect": false },
+      { "text": "Nie będzie to miało żadnego efektu", "isCorrect": false }
     ]
   },
   {
-    "question": "Jaki będzie wynik poniższego kodu JavaScript?\nconsole.log(typeof NaN);",
+    "question": "Co zwróci `Object.keys({a: 1, b: 2, c: 3});`?",
     "type": "code",
+    "difficulty": "easy",
     "answers": [
-      { "text": "'number'", "isCorrect": true },
-      { "text": "'NaN'", "isCorrect": false },
-      { "text": "'undefined'", "isCorrect": false },
-      { "text": "'object'", "isCorrect": false }
+      { "text": "['a', 'b', 'c']", "isCorrect": true },
+      { "text": "[1, 2, 3]", "isCorrect": false },
+      { "text": "{a: 1, b: 2, c: 3}", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
     ]
   },
   {
-    "question": "Co wyświetli poniższy kod HTML i CSS?\n<div class=\"box\">Hello</div>\n\n.box {\n  width: 100px;\n  height: 100px;\n  background-color: blue;\n  color: white;\n  text-align: center;\n  line-height: 100px;\n}",
+    "question": "Jaki będzie wynik tego kodu React: `const Component = () => <div>{[1,2,3].map(n => <span key={n}>{n}</span>)}</div>;`?",
     "type": "code",
+    "difficulty": "medium",
     "answers": [
       {
-        "text": "Niebieski kwadrat z białym tekstem 'Hello' na środku",
+        "text": "Div zawierający trzy spany z liczbami 1, 2 i 3",
+        "isCorrect": true
+      },
+      { "text": "Błąd renderowania", "isCorrect": false },
+      { "text": "Pusty div", "isCorrect": false },
+      { "text": "Div z tekstem '123'", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `'hello'.padStart(10, '*');`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "'*****hello'", "isCorrect": true },
+      { "text": "'hello*****'", "isCorrect": false },
+      { "text": "'hello'", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu SASS: `$primary-color: blue; .button { color: darken($primary-color, 10%); }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Kolor tekstu przycisku będzie ciemniejszą wersją niebieskiego",
+        "isCorrect": true
+      },
+      { "text": "Kolor tekstu przycisku będzie niebieski", "isCorrect": false },
+      { "text": "Błąd kompilacji SASS", "isCorrect": false },
+      {
+        "text": "Kolor tekstu przycisku będzie jaśniejszą wersją niebieskiego",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `[1, [2, [3, 4]]].flat(2);`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "[1, 2, 3, 4]", "isCorrect": true },
+      { "text": "[1, [2, [3, 4]]]", "isCorrect": false },
+      { "text": "[1, 2, [3, 4]]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu TypeScript: `type T = Readonly<{a: number, b: string}>;`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "T będzie typem z tylko do odczytu właściwościami a i b",
         "isCorrect": true
       },
       {
-        "text": "Biały kwadrat z niebieskim tekstem 'Hello' na środku",
+        "text": "T będzie normalnym typem {a: number, b: string}",
         "isCorrect": false
       },
-      {
-        "text": "Niebieski prostokąt z białym tekstem 'Hello' w lewym górnym rogu",
-        "isCorrect": false
-      },
-      { "text": "Tekst 'Hello' bez żadnego tła", "isCorrect": false }
+      { "text": "Błąd kompilacji", "isCorrect": false },
+      { "text": "T będzie typem any", "isCorrect": false }
     ]
   },
   {
-    "question": "Co wyświetli poniższy kod React?\nfunction App() {\n  const items = ['Apple', 'Banana', 'Orange'];\n  return (\n    <ul>\n      {items.map((item, index) => (\n        <li key={index}>{item}</li>\n      ))}\n    </ul>\n  );\n}",
+    "question": "Co zwróci `new URLSearchParams('?foo=1&bar=2').get('foo');`?",
     "type": "code",
+    "difficulty": "medium",
     "answers": [
-      { "text": "Listę wypunktowaną z trzema owocami", "isCorrect": true },
-      { "text": "Listę numerowaną z trzema owocami", "isCorrect": false },
-      {
-        "text": "Trzy oddzielne listy, każda z jednym owocem",
-        "isCorrect": false
-      },
-      { "text": "Error, brakuje return w funkcji map", "isCorrect": false }
+      { "text": "'1'", "isCorrect": true },
+      { "text": "1", "isCorrect": false },
+      { "text": "null", "isCorrect": false },
+      { "text": "undefined", "isCorrect": false }
     ]
   },
   {
-    "question": "Jaki będzie wynik poniższego kodu JavaScript?\nconst obj = { a: 1, b: 2, c: 3 };\nconst { a, ...rest } = obj;\nconsole.log(rest);",
+    "question": "Jaki będzie efekt tego kodu CSS: `div::before { content: attr(data-text); }`?",
     "type": "code",
+    "difficulty": "hard",
     "answers": [
-      { "text": "{ b: 2, c: 3 }", "isCorrect": true },
-      { "text": "{ a: 1 }", "isCorrect": false },
-      { "text": "{ a: 1, b: 2, c: 3 }", "isCorrect": false },
+      {
+        "text": "Przed każdym divem zostanie wstawiona zawartość jego atrybutu data-text",
+        "isCorrect": true
+      },
+      { "text": "Błąd składni CSS", "isCorrect": false },
+      { "text": "Nic się nie stanie", "isCorrect": false },
+      { "text": "Wszystkie divy zostaną ukryte", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Object.entries({a: 1, b: 2, c: 3});`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "[['a', 1], ['b', 2], ['c', 3]]", "isCorrect": true },
+      { "text": "['a', 'b', 'c']", "isCorrect": false },
+      { "text": "[1, 2, 3]", "isCorrect": false },
+      { "text": "{a: 1, b: 2, c: 3}", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu React: `const [state, setState] = useState({count: 0}); setState(prev => ({...prev, count: prev.count + 1}));`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Stan zostanie zaktualizowany, zwiększając count o 1",
+        "isCorrect": true
+      },
+      { "text": "Błąd wykonania", "isCorrect": false },
+      { "text": "Stan nie zmieni się", "isCorrect": false },
+      {
+        "text": "Cały stan zostanie zastąpiony obiektem {count: 1}",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Tail Call Optimization' w programowaniu funkcyjnym?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Optymalizacja, która pozwala na wykonywanie rekurencji bez zwiększania stosu wywołań",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji pętli while", "isCorrect": false },
+      { "text": "Metoda usuwania nieużywanych zmiennych", "isCorrect": false },
+      {
+        "text": "Sposób na zmniejszenie złożoności algorytmów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Monada' w programowaniu funkcyjnym?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Struktura reprezentująca obliczenia i sekwencje operacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Typ danych do przechowywania pojedynczych wartości",
+        "isCorrect": false
+      },
+      { "text": "Metoda optymalizacji rekurencji", "isCorrect": false },
+      { "text": "Technika zarządzania pamięcią", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Abstract Syntax Tree' (AST) w kontekście kompilatorów?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Drzewiasta reprezentacja struktury syntaktycznej kodu źródłowego",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji kodu maszynowego", "isCorrect": false },
+      { "text": "Technika analizy wydajności programów", "isCorrect": false },
+      {
+        "text": "Struktura danych do przechowywania zmiennych globalnych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Isomorphic JavaScript'?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Kod JavaScript, który może być wykonywany zarówno po stronie klienta, jak i serwera",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji renderowania w przeglądarce",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia responsywnych interfejsów",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Event Sourcing' w architekturze aplikacji?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Wzorzec, w którym stan aplikacji jest określany przez sekwencję zdarzeń",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji obsługi zdarzeń w DOM",
+        "isCorrect": false
+      },
+      { "text": "Metoda zarządzania stanem w React", "isCorrect": false },
+      {
+        "text": "Protokół komunikacji między mikroserwisami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'CQRS' (Command Query Responsibility Segregation)?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Wzorzec architektoniczny rozdzielający operacje odczytu i zapisu danych",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji baz danych", "isCorrect": false },
+      {
+        "text": "Protokół komunikacji w systemach rozproszonych",
+        "isCorrect": false
+      },
+      { "text": "Metoda zabezpieczania API", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Bloom Filter' w kontekście struktur danych?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Probabilistyczna struktura danych do testowania przynależności elementu do zbioru",
+        "isCorrect": true
+      },
+      {
+        "text": "Algorytm sortowania dużych zbiorów danych",
+        "isCorrect": false
+      },
+      { "text": "Technika kompresji danych w JavaScript", "isCorrect": false },
+      { "text": "Metoda indeksowania w bazach danych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'WebAssembly' (Wasm)?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Niskopoziomowy format kodu dla przeglądarek internetowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Nowy język programowania do tworzenia stron internetowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      { "text": "Technika optymalizacji JavaScript", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Differential Rendering' w kontekście React?",
+    "type": "react",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Technika renderowania różnych wersji komponentu w zależności od środowiska (serwer/klient)",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji renderowania list", "isCorrect": false },
+      { "text": "Sposób na tworzenie animacji w React", "isCorrect": false },
+      { "text": "Technika lazy loading komponentów", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Zero-Knowledge Proof' w kryptografii?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Metoda udowodnienia posiadania informacji bez ujawniania jej treści",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika szyfrowania danych w transmisji",
+        "isCorrect": false
+      },
+      {
+        "text": "Protokół uwierzytelniania w aplikacjach webowych",
+        "isCorrect": false
+      },
+      { "text": "Metoda generowania kluczy publicznych", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Quantum Computing' i jak może wpłynąć na obecne metody szyfrowania?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Obliczenia kwantowe mogą złamać wiele obecnych szyfrów asymetrycznych",
+        "isCorrect": true
+      },
+      {
+        "text": "Quantum Computing nie ma wpływu na bezpieczeństwo cyfrowe",
+        "isCorrect": false
+      },
+      { "text": "Wzmacnia istniejące metody szyfrowania", "isCorrect": false },
+      {
+        "text": "Jest to tylko teoretyczny koncept bez praktycznych zastosowań",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Homomorphic Encryption'?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Technika szyfrowania pozwalająca na wykonywanie obliczeń na zaszyfrowanych danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda kompresji danych przed szyfrowaniem",
+        "isCorrect": false
+      },
+      { "text": "Protokół wymiany kluczy w sieciach P2P", "isCorrect": false },
+      {
+        "text": "Algorytm generowania unikalnych identyfikatorów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Turing Completeness' w kontekście języków programowania?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Zdolność języka do symulowania uniwersalnej maszyny Turinga",
+        "isCorrect": true
+      },
+      { "text": "Miara wydajności kompilatorów", "isCorrect": false },
+      { "text": "Technika optymalizacji kodu maszynowego", "isCorrect": false },
+      {
+        "text": "Standard bezpieczeństwa w językach programowania",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Eventual Consistency' w systemach rozproszonych?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Model spójności, w którym system ostatecznie osiągnie spójny stan",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika synchronizacji zegarów w klastrach",
+        "isCorrect": false
+      },
+      { "text": "Protokół routingu w sieciach mesh", "isCorrect": false },
+      {
+        "text": "Metoda optymalizacji zapytań w bazach NoSQL",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Reactive Programming' i jak się różni od programowania imperatywnego?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Paradygmat skupiający się na strumieniach danych i propagacji zmian",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji pętli w JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda zarządzania pamięcią w aplikacjach",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Persistent Data Structure' i jakie ma zastosowania?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Struktura danych zachowująca poprzednie wersje po modyfikacjach",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda przechowywania danych w pamięci cache",
+        "isCorrect": false
+      },
+      { "text": "Technika optymalizacji baz danych", "isCorrect": false },
+      {
+        "text": "Protokół synchronizacji danych między serwerami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Aspect-Oriented Programming' (AOP)?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Paradygmat programowania skupiający się na separacji zagadnień przekrojowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji wydajności aplikacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda projektowania interfejsów użytkownika",
+        "isCorrect": false
+      },
+      { "text": "Framework do testowania jednostkowego", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Garbage Collection' w językach programowania i jakie są główne strategie?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Automatyczne zarządzanie pamięcią, główne strategie to Mark-and-Sweep i Reference Counting",
+        "isCorrect": true
+      },
+      { "text": "Technika optymalizacji kodu źródłowego", "isCorrect": false },
+      { "text": "Metoda kompresji danych w aplikacjach", "isCorrect": false },
+      { "text": "Protokół komunikacji między procesami", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Dependency Injection' i jakie problemy rozwiązuje?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Technika przekazywania zależności do obiektu, poprawiająca modularność i testowalność",
+        "isCorrect": true
+      },
+      { "text": "Metoda optymalizacji ładowania modułów", "isCorrect": false },
+      {
+        "text": "Protokół synchronizacji danych w aplikacjach rozproszonych",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika zabezpieczania aplikacji przed atakami XSS",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Blockchain' i jak działa w kontekście kryptowalut?",
+    "type": "web",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Rozproszona baza danych transakcji, zapewniająca niezmienność i transparentność",
+        "isCorrect": true
+      },
+      { "text": "Technika szyfrowania danych w chmurze", "isCorrect": false },
+      { "text": "Protokół routingu w sieciach P2P", "isCorrect": false },
+      { "text": "Metoda kompresji danych w bazach NoSQL", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci następujący kod JavaScript: `console.log(typeof NaN);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "number", "isCorrect": true },
+      { "text": "NaN", "isCorrect": false },
+      { "text": "undefined", "isCorrect": false },
+      { "text": "object", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu React: `const Element = () => <>{[1,2,3].map(n => <span key={n}>{n}</span>)}</>;`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Fragment zawierający trzy spany z liczbami 1, 2 i 3",
+        "isCorrect": true
+      },
+      { "text": "Błąd składni", "isCorrect": false },
+      { "text": "Pusty fragment", "isCorrect": false },
+      { "text": "Pojedynczy span z tekstem '123'", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `'hello'.charAt(0).toUpperCase() + 'hello'.slice(1);`?",
+    "type": "code",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "'Hello'", "isCorrect": true },
+      { "text": "'hello'", "isCorrect": false },
+      { "text": "'HELLO'", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `div { position: sticky; top: 0; }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Div będzie 'przyklejony' do góry podczas przewijania strony",
+        "isCorrect": true
+      },
+      { "text": "Div będzie zawsze na górze strony", "isCorrect": false },
+      { "text": "Div będzie miał pozycję absolutną", "isCorrect": false },
+      { "text": "Błąd składni CSS", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Array(3).fill().map((_, i) => i);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "[0, 1, 2]", "isCorrect": true },
+      { "text": "[undefined, undefined, undefined]", "isCorrect": false },
+      { "text": "[1, 2, 3]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu React: `useEffect(() => { console.log('Effect'); });`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Efekt będzie wykonywany przy każdym renderowaniu komponentu",
+        "isCorrect": true
+      },
+      {
+        "text": "Efekt wykona się tylko raz, po pierwszym renderowaniu",
+        "isCorrect": false
+      },
+      { "text": "Błąd składni", "isCorrect": false },
+      { "text": "Nic się nie stanie", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Promise.race([Promise.resolve(1), Promise.reject('error'), Promise.resolve(3)]);`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Promise rozwiązaną z wartością 1", "isCorrect": true },
+      { "text": "Promise odrzuconą z 'error'", "isCorrect": false },
+      { "text": "Promise rozwiązaną z [1, 'error', 3]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu TypeScript: `type T = Exclude<string | number | (() => void), Function>;`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "T będzie typem string | number", "isCorrect": true },
+      {
+        "text": "T będzie typem string | number | (() => void)",
+        "isCorrect": false
+      },
+      { "text": "Błąd kompilacji", "isCorrect": false },
+      { "text": "T będzie typem never", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `new Map([['a', 1], ['b', 2]]).get('c') ?? 3;`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "3", "isCorrect": true },
+      { "text": "undefined", "isCorrect": false },
+      { "text": "null", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `@supports (display: grid) { .container { display: grid; } }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": ".container będzie używał grid tylko jeśli przeglądarka wspiera tę właściwość",
+        "isCorrect": true
+      },
+      { "text": ".container zawsze będzie używał grid", "isCorrect": false },
+      { "text": "Błąd składni CSS", "isCorrect": false },
+      { "text": ".container nigdy nie będzie używał grid", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Object.is(NaN, NaN);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "true", "isCorrect": true },
+      { "text": "false", "isCorrect": false },
+      { "text": "NaN", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu React: `const [state, setState] = useState(() => {console.log('init'); return 0});`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcja inicjalizująca zostanie wywołana tylko raz, przy pierwszym renderowaniu",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja inicjalizująca będzie wywoływana przy każdym renderowaniu",
+        "isCorrect": false
+      },
+      { "text": "Błąd składni", "isCorrect": false },
+      { "text": "Stan zostanie ustawiony na undefined", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `'abc'.padEnd(6, '123');`?",
+    "type": "code",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "'abc123'", "isCorrect": true },
+      { "text": "'abc111'", "isCorrect": false },
+      { "text": "'abcabc'", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu SASS: `@mixin button($color) { background-color: $color; &:hover { background-color: darken($color, 10%); } }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Utworzenie mixinu do stylizacji przycisków z efektem hover",
+        "isCorrect": true
+      },
+      { "text": "Błąd składni SASS", "isCorrect": false },
+      { "text": "Utworzenie klasy .button", "isCorrect": false },
+      {
+        "text": "Zmiana koloru tła wszystkich przycisków na stronie",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `[1, 2, 3].reduce((acc, curr) => acc * curr, 1);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "6", "isCorrect": true },
+      { "text": "7", "isCorrect": false },
+      { "text": "[1, 2, 3]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu TypeScript: `type T = ReturnType<() => Promise<string>>;`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "T będzie typem Promise<string>", "isCorrect": true },
+      { "text": "T będzie typem string", "isCorrect": false },
+      { "text": "Błąd kompilacji", "isCorrect": false },
+      { "text": "T będzie typem any", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(1234.56);`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "'$1,234.56'", "isCorrect": true },
+      { "text": "'1,234.56 USD'", "isCorrect": false },
+      { "text": "'1234.56'", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `img { object-fit: cover; width: 100%; height: 300px; }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Obraz wypełni kontener, zachowując proporcje i przycinając nadmiar",
+        "isCorrect": true
+      },
+      {
+        "text": "Obraz zostanie rozciągnięty do wymiarów kontenera",
+        "isCorrect": false
+      },
+      { "text": "Obraz zachowa oryginalne wymiary", "isCorrect": false },
+      { "text": "Błąd składni CSS", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Object.fromEntries([['a', 1], ['b', 2]]);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "{ a: 1, b: 2 }", "isCorrect": true },
+      { "text": "[['a', 1], ['b', 2]]", "isCorrect": false },
+      { "text": "['a', 'b']", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu React: `const Comp = React.memo(() => <div>Hello</div>);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Stworzenie zoptymalizowanego komponentu, który nie będzie się rerenderował, jeśli props się nie zmienią",
+        "isCorrect": true
+      },
+      { "text": "Błąd składni", "isCorrect": false },
+      {
+        "text": "Stworzenie komponentu, który zawsze się rerenderuje",
+        "isCorrect": false
+      },
+      {
+        "text": "Stworzenie komponentu z zapamiętanym stanem",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `'🌈'.length;`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "2", "isCorrect": true },
+      { "text": "1", "isCorrect": false },
+      { "text": "4", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `@media (prefers-color-scheme: dark) { body { background-color: black; color: white; } }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Zastosowanie ciemnego motywu, gdy użytkownik ma ustawiony tryb ciemny w systemie",
+        "isCorrect": true
+      },
+      { "text": "Zawsze zastosowanie ciemnego motywu", "isCorrect": false },
+      { "text": "Błąd składni CSS", "isCorrect": false },
+      { "text": "Nic się nie stanie", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `[...new Set([1, 2, 2, 3, 4, 4, 5])];`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "[1, 2, 3, 4, 5]", "isCorrect": true },
+      { "text": "[1, 2, 2, 3, 4, 4, 5]", "isCorrect": false },
+      { "text": "Set(5) {1, 2, 3, 4, 5}", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu TypeScript: `type T = Parameters<(a: number, b: string) => void>;`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "T będzie typem [number, string]", "isCorrect": true },
+      {
+        "text": "T będzie typem (a: number, b: string) => void",
+        "isCorrect": false
+      },
+      { "text": "Błąd kompilacji", "isCorrect": false },
+      { "text": "T będzie typem [any, any]", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co zwróci `Object.getOwnPropertyNames(Math);`?",
+    "type": "code",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Tablica zawierająca nazwy wszystkich właściwości obiektu Math",
+        "isCorrect": true
+      },
+      { "text": "[]", "isCorrect": false },
+      { "text": "['PI', 'E', 'LN2', 'LN10']", "isCorrect": false },
       { "text": "Error", "isCorrect": false }
     ]
   }
