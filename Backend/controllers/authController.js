@@ -19,10 +19,9 @@ const register = async (req, res, next) => {
         message: "Email jest już w użyciu",
       });
     }
-    const hashedPassword = await bcryptjs.hash(password, 10);
     const newUser = new User({
       email,
-      password: hashedPassword,
+      password,
       id: nanoid(),
     });
 
@@ -43,8 +42,11 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   try {
+    console.log("Otrzymane dane logowania:", req.body);
+
     const { error } = loginSchema.validate(req.body);
     if (error) {
+      console.log("Błąd walidacji:", error.details[0].message);
       return res.status(400).json({ message: error.details[0].message });
     }
 
@@ -52,12 +54,18 @@ const login = async (req, res, next) => {
 
     const user = await User.findOne({ email });
     if (!user) {
+      console.log("Nie znaleziono użytkownika o emailu:", email);
       return res.status(401).json({ message: "Nieprawidłowy email lub hasło" });
     }
+    console.log("Znaleziono użytkownika:", user.email);
+
     const isMatch = await bcryptjs.compare(password, user.password);
+    console.log("Wynik porównania hasła:", isMatch);
     if (!isMatch) {
+      console.log("Nieprawidłowe hasło dla użytkownika:", email);
       return res.status(401).json({ message: "Nieprawidłowy email lub hasło" });
     }
+    console.log("Hasło poprawne dla użytkownika:", email);
 
     const payload = {
       id: user._id,
@@ -95,6 +103,7 @@ const login = async (req, res, next) => {
       },
     });
   } catch (error) {
+    console.error("Błąd podczas logowania:", error);
     next(error);
   }
 };
