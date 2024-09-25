@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const session = require("express-session");
 const connectDB = require("./config/db");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -15,7 +16,14 @@ connectDB().then(() => {
     console.log("Baza danych zaktualizowana");
   });
 });
-
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "tajny_klucz",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: process.env.NODE_ENV === "production" },
+  })
+);
 // Middleware
 app.use(cors());
 app.use(express.json());
