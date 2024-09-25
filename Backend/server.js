@@ -8,6 +8,7 @@ const routes = require("./routes/Routes");
 const updateDatabase = require("./scripts/updateDatabase");
 const errorHandler = require("./middleware/errorMiddleware");
 const app = express();
+const { loginLimiter } = require("./middleware/rateLimit");
 
 // Połączenie z MongoDB
 connectDB().then(() => {
@@ -16,6 +17,10 @@ connectDB().then(() => {
     console.log("Baza danych zaktualizowana");
   });
 });
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "tajny_klucz",
@@ -24,11 +29,7 @@ app.use(
     cookie: { secure: process.env.NODE_ENV === "production" },
   })
 );
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(cookieParser());
-
+app.use("/api/auth/login", loginLimiter);
 // Trasy API
 app.use("/api", routes);
 app.use("/error", errorHandler);

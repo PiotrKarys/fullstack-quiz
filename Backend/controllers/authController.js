@@ -5,27 +5,38 @@ const { registerSchema, loginSchema } = require("../utils/validationSchemas");
 
 const register = async (req, res, next) => {
   try {
+    console.log("Rozpoczęcie rejestracji");
     const { error } = registerSchema.validate(req.body);
     if (error) {
+      console.log("Błąd walidacji:", error.details[0].message);
       return res.status(400).json({ message: error.details[0].message });
     }
 
     const { nanoid } = await import("nanoid");
     const { email, password } = req.body;
+    console.log("Dane rejestracji:", { email });
+
     const existingUser = await User.findOne({ email });
     if (existingUser) {
+      console.log("Użytkownik już istnieje");
       return res.status(409).json({
         status: "error",
         message: "Email jest już w użyciu",
       });
     }
+
+    const userId = nanoid(); // Generuj id tutaj
+    console.log("Wygenerowane ID:", userId);
+
     const newUser = new User({
       email,
       password,
-      id: nanoid(),
+      id: userId,
     });
 
+    console.log("Próba zapisania użytkownika");
     await newUser.save();
+    console.log("Użytkownik zapisany");
 
     res.status(201).json({
       status: "success",
@@ -36,6 +47,7 @@ const register = async (req, res, next) => {
       },
     });
   } catch (error) {
+    console.error("Błąd podczas rejestracji:", error);
     next(error);
   }
 };
@@ -43,7 +55,19 @@ const register = async (req, res, next) => {
 const login = async (req, res, next) => {
   try {
     console.log("Otrzymane dane logowania:", req.body);
-
+    const token = req.cookies.accessToken;
+    if (token) {
+      try {
+        jwt.verify(token, process.env.JWT_SECRET);
+        return res.status(200).json({
+          status: "success",
+          message: "Użytkownik jest już zalogowany",
+        });
+      } catch (err) {
+        // Token jest nieważny, kontynuuj logowanie
+        console.log("Nieważny token, kontynuowanie logowania");
+      }
+    }
     const { error } = loginSchema.validate(req.body);
     if (error) {
       console.log("Błąd walidacji:", error.details[0].message);

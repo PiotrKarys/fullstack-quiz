@@ -45,3 +45,6 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
 exports.resetQuiz = async sessionId => {
   await QuizSession.findOneAndDelete({ sessionId });
 };
+exports.getAllQuestions = async () => {
+  return await Quiz.find({}, "question"); // Zwracamy tylko pole 'question'
+};

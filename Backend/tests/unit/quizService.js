@@ -1,4 +1,3 @@
-const { getRandomQuestions } = require("../../services/quizService");
 const Quiz = require("../../models/quizSchema");
 
 jest.mock("../../models/quizSchema");
