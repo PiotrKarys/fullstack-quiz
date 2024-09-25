@@ -5,7 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const routes = require("./routes/Routes");
 const updateDatabase = require("./scripts/updateDatabase");
-
+const errorHandler = require("./middleware/errorMiddleware");
 const app = express();
 
 // Połączenie z MongoDB
@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 // Trasy API
 app.use("/api", routes);
-
+app.use("/error", errorHandler);
 // Uruchom serwer
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
