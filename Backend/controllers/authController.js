@@ -2,7 +2,35 @@ const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
 const User = require("../models/userSchema");
 const { registerSchema, loginSchema } = require("../utils/validationSchemas");
+const Blacklist = require("../models/blacklistSchema");
 
+/**
+ * @swagger
+ * /api/auth/register:
+ *   post:
+ *     summary: Rejestracja nowego użytkownika
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Użytkownik został utworzony
+ *       400:
+ *         description: Błąd walidacji
+ *       409:
+ *         description: Email jest już w użyciu
+ *       500:
+ *         description: Wystąpił błąd
+ */
 const register = async (req, res, next) => {
   try {
     console.log("Rozpoczęcie rejestracji");
@@ -52,6 +80,33 @@ const register = async (req, res, next) => {
   }
 };
 
+/**
+ * @swagger
+ * /api/auth/login:
+ *   post:
+ *     summary: Logowanie użytkownika
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Zalogowano pomyślnie
+ *       400:
+ *         description: Błąd walidacji
+ *       401:
+ *         description: Nieprawidłowy email lub hasło
+ *       500:
+ *         description: Wystąpił błąd
+ */
 const login = async (req, res, next) => {
   try {
     console.log("Otrzymane dane logowania:", req.body);
@@ -59,12 +114,12 @@ const login = async (req, res, next) => {
     if (token) {
       try {
         jwt.verify(token, process.env.JWT_SECRET);
+        console.log("Użytkownik jest już zalogowany");
         return res.status(200).json({
           status: "success",
           message: "Użytkownik jest już zalogowany",
         });
       } catch (err) {
-        // Token jest nieważny, kontynuuj logowanie
         console.log("Nieważny token, kontynuowanie logowania");
       }
     }
@@ -132,8 +187,33 @@ const login = async (req, res, next) => {
   }
 };
 
+/**
+ * @swagger
+ * /api/auth/logout:
+ *   post:
+ *     summary: Wylogowanie użytkownika
+ *     responses:
+ *       200:
+ *         description: Wylogowano pomyślnie
+ *       500:
+ *         description: Wystąpił błąd
+ */
 const logout = async (req, res, next) => {
   try {
+    console.log("Rozpoczęcie wylogowania");
+    const accessToken = req.cookies.accessToken;
+    const refreshToken = req.cookies.refreshToken;
+
+    // Dodaj tokeny do blacklisty
+    if (accessToken) {
+      await new Blacklist({ token: accessToken }).save();
+      console.log("Dodano accessToken do blacklisty");
+    }
+    if (refreshToken) {
+      await new Blacklist({ token: refreshToken }).save();
+      console.log("Dodano refreshToken do blacklisty");
+    }
+
     // Usuwamy ciasteczka z tokenami
     res.clearCookie("accessToken", {
       httpOnly: true,
@@ -152,15 +232,43 @@ const logout = async (req, res, next) => {
       message: "Wylogowano pomyślnie",
     });
   } catch (error) {
+    console.error("Błąd podczas wylogowania:", error);
     next(error);
   }
 };
+
+/**
+ * @swagger
+ * /api/auth/refresh-token:
+ *   post:
+ *     summary: Odświeżenie tokenów
+ *     responses:
+ *       200:
+ *         description: Tokeny zostały odświeżone
+ *       401:
+ *         description: Brak tokenu odświeżającego
+ *       403:
+ *         description: Nieprawidłowy token odświeżający
+ *       500:
+ *         description: Wystąpił błąd
+ */
 const refreshToken = async (req, res, next) => {
   try {
+    console.log("Rozpoczęcie odświeżania tokenów");
     const oldRefreshToken = req.cookies.refreshToken;
 
     if (!oldRefreshToken) {
+      console.log("Brak tokenu odświeżającego");
       return res.status(401).json({ message: "Brak tokenu odświeżającego" });
+    }
+
+    // Sprawdź, czy token jest na blackliście
+    const isBlacklisted = await Blacklist.findOne({ token: oldRefreshToken });
+    if (isBlacklisted) {
+      console.log("Token odświeżający jest nieważny");
+      return res
+        .status(401)
+        .json({ message: "Token odświeżający jest nieważny" });
     }
 
     jwt.verify(
@@ -168,6 +276,7 @@ const refreshToken = async (req, res, next) => {
       process.env.REFRESH_JWT_SECRET,
       async (err, decoded) => {
         if (err) {
+          console.log("Nieprawidłowy token odświeżający");
           return res
             .status(403)
             .json({ message: "Nieprawidłowy token odświeżający" });
@@ -175,6 +284,7 @@ const refreshToken = async (req, res, next) => {
 
         const user = await User.findById(decoded.id);
         if (!user) {
+          console.log("Użytkownik nie istnieje");
           return res.status(403).json({ message: "Użytkownik nie istnieje" });
         }
 
@@ -184,7 +294,7 @@ const refreshToken = async (req, res, next) => {
         };
 
         const newAccessToken = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn: "15m", // Krótszy czas życia
+          expiresIn: "15m",
         });
 
         const newRefreshToken = jwt.sign(
@@ -195,24 +305,29 @@ const refreshToken = async (req, res, next) => {
           }
         );
 
+        // Dodaj stary refresh token do blacklisty
+        await new Blacklist({ token: oldRefreshToken }).save();
+        console.log("Dodano stary refresh token do blacklisty");
+
         res.cookie("accessToken", newAccessToken, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
           sameSite: "strict",
-          maxAge: 15 * 60 * 1000, // 15 minut
+          maxAge: 15 * 60 * 1000,
         });
 
         res.cookie("refreshToken", newRefreshToken, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
           sameSite: "strict",
-          maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dni
+          maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
         res.json({ message: "Tokeny zostały odświeżone" });
       }
     );
   } catch (error) {
+    console.error("Błąd podczas odświeżania tokenów:", error);
     next(error);
   }
 };

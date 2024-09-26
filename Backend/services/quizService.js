@@ -33,12 +33,7 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
     let session = await QuizSession.findOne({ sessionId });
     console.log(`Znaleziona sesja: ${session ? "Tak" : "Nie"}`);
 
-    if (!session || page === 1) {
-      if (session) {
-        await QuizSession.deleteOne({ sessionId });
-        console.log(`Usunięto starą sesję`);
-      }
-
+    if (!session) {
       const shuffledQuestionIds = shuffleArray(
         Object.keys(cachedQuestions)
       ).slice(0, 10); // Ograniczenie do 10 pytań
@@ -54,6 +49,12 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
       console.log(
         `Utworzono nową sesję. ID pierwszego pytania w sesji: ${session.questions[0]}`
       );
+    }
+
+    // Aktualizuj currentPage tylko jeśli jest to nowa strona
+    if (page > session.currentPage) {
+      session.currentPage = page;
+      await session.save();
     }
 
     const skip = (page - 1) * pageSize;
@@ -86,12 +87,9 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
       answers: shuffleArray([...question.answers]),
     }));
 
-    session.currentPage = page;
-    await session.save();
-
     return {
       questions: questionsWithShuffledAnswers,
-      currentPage: page,
+      currentPage: session.currentPage,
       totalPages: Math.ceil(session.questions.length / pageSize),
       totalQuestions: session.questions.length,
     };
@@ -103,6 +101,7 @@ exports.getRandomQuestions = async (sessionId, page = 1, pageSize = 1) => {
 
 exports.resetQuiz = async sessionId => {
   await QuizSession.findOneAndDelete({ sessionId });
+  console.log(`Zresetowano quiz dla sesji: ${sessionId}`);
 };
 
 exports.getAllQuestions = async () => {
