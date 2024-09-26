@@ -6,21 +6,23 @@ const Blacklist = require("../models/blacklistSchema");
 
 /**
  * @swagger
+ * tags:
+ *   - name: Auth
+ *     description: Operacje związane z autoryzacją
+ */
+
+/**
+ * @swagger
  * /api/auth/register:
  *   post:
+ *     tags: [Auth]
  *     summary: Rejestracja nowego użytkownika
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *                 format: email
- *               password:
- *                 type: string
+ *             $ref: '#/components/schemas/User'
  *     responses:
  *       201:
  *         description: Użytkownik został utworzony
@@ -84,6 +86,7 @@ const register = async (req, res, next) => {
  * @swagger
  * /api/auth/login:
  *   post:
+ *     tags: [Auth]
  *     summary: Logowanie użytkownika
  *     requestBody:
  *       required: true
@@ -191,6 +194,7 @@ const login = async (req, res, next) => {
  * @swagger
  * /api/auth/logout:
  *   post:
+ *     tags: [Auth]
  *     summary: Wylogowanie użytkownika
  *     responses:
  *       200:
@@ -241,6 +245,7 @@ const logout = async (req, res, next) => {
  * @swagger
  * /api/auth/refresh-token:
  *   post:
+ *     tags: [Auth]
  *     summary: Odświeżenie tokenów
  *     responses:
  *       200:

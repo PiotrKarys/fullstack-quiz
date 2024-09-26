@@ -2,8 +2,16 @@ const Quiz = require("../models/quizSchema");
 
 /**
  * @swagger
+ * tags:
+ *   - name: Questions
+ *     description: Operacje związane z pytaniami
+ */
+
+/**
+ * @swagger
  * /api/questions:
  *   get:
+ *     tags: [Questions]
  *     summary: Pobierz wszystkie pytania
  *     parameters:
  *       - name: page
@@ -84,6 +92,7 @@ exports.getAllQuestions = async (req, res) => {
  * @swagger
  * /api/questions/type:
  *   get:
+ *     tags: [Questions]
  *     summary: Pobierz pytania według typu
  *     parameters:
  *       - name: type
