@@ -4,35 +4,6 @@ const User = require("../models/userSchema");
 const { registerSchema, loginSchema } = require("../utils/validationSchemas");
 const Blacklist = require("../models/blacklistSchema");
 
-/**
- * @swagger
- * tags:
- *   - name: Auth
- *     description: Operacje związane z autoryzacją
- */
-
-/**
- * @swagger
- * /api/auth/register:
- *   post:
- *     tags: [Auth]
- *     summary: Rejestracja nowego użytkownika
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/User'
- *     responses:
- *       201:
- *         description: Użytkownik został utworzony
- *       400:
- *         description: Błąd walidacji
- *       409:
- *         description: Email jest już w użyciu
- *       500:
- *         description: Wystąpił błąd
- */
 const register = async (req, res, next) => {
   try {
     console.log("Rozpoczęcie rejestracji");
@@ -82,34 +53,6 @@ const register = async (req, res, next) => {
   }
 };
 
-/**
- * @swagger
- * /api/auth/login:
- *   post:
- *     tags: [Auth]
- *     summary: Logowanie użytkownika
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *                 format: email
- *               password:
- *                 type: string
- *     responses:
- *       200:
- *         description: Zalogowano pomyślnie
- *       400:
- *         description: Błąd walidacji
- *       401:
- *         description: Nieprawidłowy email lub hasło
- *       500:
- *         description: Wystąpił błąd
- */
 const login = async (req, res, next) => {
   try {
     console.log("Otrzymane dane logowania:", req.body);
@@ -190,18 +133,6 @@ const login = async (req, res, next) => {
   }
 };
 
-/**
- * @swagger
- * /api/auth/logout:
- *   post:
- *     tags: [Auth]
- *     summary: Wylogowanie użytkownika
- *     responses:
- *       200:
- *         description: Wylogowano pomyślnie
- *       500:
- *         description: Wystąpił błąd
- */
 const logout = async (req, res, next) => {
   try {
     console.log("Rozpoczęcie wylogowania");
@@ -241,22 +172,6 @@ const logout = async (req, res, next) => {
   }
 };
 
-/**
- * @swagger
- * /api/auth/refresh-token:
- *   post:
- *     tags: [Auth]
- *     summary: Odświeżenie tokenów
- *     responses:
- *       200:
- *         description: Tokeny zostały odświeżone
- *       401:
- *         description: Brak tokenu odświeżającego
- *       403:
- *         description: Nieprawidłowy token odświeżający
- *       500:
- *         description: Wystąpił błąd
- */
 const refreshToken = async (req, res, next) => {
   try {
     console.log("Rozpoczęcie odświeżania tokenów");

@@ -1,65 +1,6 @@
 const quizService = require("../services/quizService");
 const Quiz = require("../models/quizSchema");
 
-/**
- * @swagger
- * tags:
- *   - name: Quiz
- *     description: Operacje związane z quizami
- */
-
-/**
- * @swagger
- * /api/quiz/questions/random:
- *   get:
- *     tags: [Quiz]
- *     summary: Pobierz losowe pytania
- *     parameters:
- *       - name: page
- *         in: query
- *         description: Numer strony
- *         required: false
- *         schema:
- *           type: integer
- *           default: 1
- *       - name: pageSize
- *         in: query
- *         description: Liczba pytań na stronie
- *         required: false
- *         schema:
- *           type: integer
- *           default: 1
- *       - name: reset
- *         in: query
- *         description: Czy zresetować quiz
- *         required: false
- *         schema:
- *           type: boolean
- *           default: false
- *     responses:
- *       200:
- *         description: Lista losowych pytań
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 questions:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       id:
- *                         type: integer
- *                       question:
- *                         type: string
- *                 sessionId:
- *                   type: string
- *                 pageSize:
- *                   type: integer
- *       500:
- *         description: Wystąpił błąd
- */
 exports.getRandomQuestions = async (req, res) => {
   console.log("Rozpoczęcie pobierania losowych pytań");
   try {
@@ -114,18 +55,6 @@ exports.getRandomQuestions = async (req, res) => {
   }
 };
 
-/**
- * @swagger
- * /api/quiz/reset:
- *   post:
- *     tags: [Quiz]
- *     summary: Zresetuj quiz
- *     responses:
- *       200:
- *         description: Quiz został zresetowany
- *       500:
- *         description: Wystąpił błąd podczas resetowania quizu
- */
 exports.resetQuiz = async (req, res) => {
   console.log("Rozpoczęcie resetowania quizu");
   try {
@@ -147,24 +76,6 @@ exports.resetQuiz = async (req, res) => {
   }
 };
 
-/**
- * @swagger
- * /api/quiz/questions/types:
- *   get:
- *     tags: [Quiz]
- *     summary: Pobierz dostępne typy pytań
- *     responses:
- *       200:
- *         description: Lista typów pytań
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: string
- *       500:
- *         description: Wystąpił błąd
- */
 exports.getQuestionTypes = async (req, res) => {
   console.log("Rozpoczęcie pobierania typów pytań");
   try {
@@ -179,63 +90,6 @@ exports.getQuestionTypes = async (req, res) => {
   }
 };
 
-/**
- * @swagger
- * /api/quiz/questions/type:
- *   get:
- *     tags: [Quiz]
- *     summary: Pobierz pytania według typu
- *     parameters:
- *       - name: type
- *         in: query
- *         description: Typ pytania
- *         required: true
- *         schema:
- *           type: string
- *       - name: page
- *         in: query
- *         description: Numer strony
- *         required: false
- *         schema:
- *           type: integer
- *           default: 1
- *       - name: limit
- *         in: query
- *         description: Liczba pytań na stronie
- *         required: false
- *         schema:
- *           type: integer
- *           default: 20
- *     responses:
- *       200:
- *         description: Lista pytań
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 questions:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       id:
- *                         type: integer
- *                       question:
- *                         type: string
- *                       type:
- *                         type: string
- *                 currentPage:
- *                   type: integer
- *                 totalPages:
- *                   type: integer
- *                 totalQuestions:
- *                   type: integer
- *       404:
- *         description: Brak pytań w tej kategorii
- *       500:
- *         description: Wystąpił błąd
- */
 exports.getQuestionsByType = async (req, res) => {
   console.log("Rozpoczęcie pobierania pytań według typu");
   const { type } = req.query;
