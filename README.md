@@ -1,4 +1,2 @@
-# fullstack-quiz
+add json file path with questions 
  
-/api-docs
-for API documentation (swagger)
