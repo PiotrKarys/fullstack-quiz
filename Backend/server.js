@@ -13,6 +13,8 @@ const compression = require("compression");
 const quizService = require("./services/quizService");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const helmet = require("helmet");
+
 // Połączenie z MongoDB
 connectDB().then(async () => {
   console.log("Połączono z bazą danych");
@@ -21,6 +23,7 @@ connectDB().then(async () => {
   await quizService.loadQuestionsToCache();
   console.log("Pytania załadowane do pamięci podręcznej");
 });
+
 // Swagger configuration
 const swaggerOptions = {
   swaggerDefinition: {
@@ -43,6 +46,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Middleware
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
@@ -63,9 +67,11 @@ app.use(
     filter: shouldCompress,
   })
 );
+
 // Trasy API
 app.use("/api", routes);
 app.use("/error", errorHandler);
+
 // Uruchom serwer
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
