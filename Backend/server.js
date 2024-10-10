@@ -11,10 +11,10 @@ const app = express();
 const { loginLimiter, generalLimiter } = require("./middleware/rateLimit");
 const compression = require("compression");
 const quizService = require("./services/quizService");
-const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load("./swagger.yaml");
 const helmet = require("helmet");
-
+const swaggerUi = require("swagger-ui-express");
 // Połączenie z MongoDB
 connectDB().then(async () => {
   console.log("Połączono z bazą danych");
@@ -23,27 +23,6 @@ connectDB().then(async () => {
   await quizService.loadQuestionsToCache();
   console.log("Pytania załadowane do pamięci podręcznej");
 });
-
-// Swagger configuration
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: "3.0.0",
-    info: {
-      title: "Quiz API",
-      version: "1.0.0",
-      description: "API do zarządzania quizami",
-    },
-    servers: [
-      {
-        url: "http://localhost:5000",
-      },
-    ],
-  },
-  apis: ["./controllers/*.js", "./routes/*.js"], // Ścieżka do plików z dokumentacją
-};
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Middleware
 app.use(helmet());
@@ -71,6 +50,7 @@ app.use(
 // Trasy API
 app.use("/api", routes);
 app.use("/error", errorHandler);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Uruchom serwer
 const PORT = process.env.PORT || 5000;
@@ -80,14 +60,13 @@ app.listen(PORT, () => {
 
 function shouldCompress(req, res) {
   if (req.headers["x-no-compression"]) {
-    console.log("Nie kompresuj, jeśli klient wyraźnie tego nie chce");
     return false;
   }
 
-  // Kompresuj dla określonych typów MIME
   const contentType = res.getHeader("Content-Type");
   if (contentType) {
-    console.log(`Kompresja dla typu MIME: ${contentType}`);
+    // Usuń lub zakomentuj tę linię, aby wyłączyć logowanie
+    // console.log(`Kompresja dla typu MIME: ${contentType}`);
     return /json|text|javascript|css/.test(contentType);
   }
 

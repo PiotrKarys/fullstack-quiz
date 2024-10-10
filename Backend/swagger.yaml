@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Quiz API
+  description: API do zarządzania quizami i autoryzacją użytkowników
+  version: 1.0.0
+  contact:
+    name: Twoje Imię
+    email: twoj@email.com
+
+servers:
+  - url: http://localhost:5000
+    description: Serwer deweloperski
+  - url: https://twoja-domena.com
+    description: Serwer produkcyjny
+
+tags:
+  - name: Auth
+    description: Endpointy związane z autoryzacją
+  - name: Quiz
+    description: Endpointy związane z quizami
+
+paths:
+  /api/auth/register:
+    post:
+      summary: Rejestracja nowego użytkownika
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        "201":
+          description: Użytkownik został pomyślnie zarejestrowany
+        "400":
+          description: Błędne dane wejściowe
+        "409":
+          description: Użytkownik o podanym emailu już istnieje
+
+  /api/auth/login:
+    post:
+      summary: Logowanie użytkownika
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        "200":
+          description: Użytkownik zalogowany pomyślnie
+        "400":
+          description: Błędne dane wejściowe
+        "401":
+          description: Nieprawidłowy email lub hasło
+
+  /api/auth/logout:
+    post:
+      summary: Wylogowanie użytkownika
+      tags:
+        - Auth
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Użytkownik wylogowany pomyślnie
+        "401":
+          description: Brak autoryzacji
+
+  /api/auth/refresh-token:
+    post:
+      summary: Odświeżenie tokenu dostępu
+      tags:
+        - Auth
+      responses:
+        "200":
+          description: Token odświeżony pomyślnie
+        "401":
+          description: Nieprawidłowy token odświeżający
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

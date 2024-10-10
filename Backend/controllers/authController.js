@@ -136,6 +136,8 @@ const login = async (req, res, next) => {
         email: user.email,
         id: user.id,
       },
+      accessToken,
+      refreshToken,
     });
   } catch (error) {
     console.error("Błąd podczas logowania:", error);
@@ -204,7 +206,7 @@ const deleteUser = async (req, res, next) => {
         .json({ message: "Nieprawidłowy token. Zaloguj się ponownie." });
     }
 
-    const user = await User.findById(userId);
+    const user = await User.findOne({ id: userId });
     if (!user) {
       return res.status(404).json({ message: "Nie znaleziono użytkownika" });
     }
@@ -216,7 +218,7 @@ const deleteUser = async (req, res, next) => {
     }
 
     // Usunięcie użytkownika
-    await User.findByIdAndDelete(userId);
+    await User.findOneAndDelete({ id: userId });
 
     // Dodanie tokenów do blacklisty
     if (accessToken) {
@@ -253,18 +255,14 @@ const deleteUser = async (req, res, next) => {
 
 const refreshToken = async (req, res, next) => {
   try {
-    console.log("Rozpoczęcie odświeżania tokenów");
-    const oldRefreshToken = req.cookies.refreshToken;
+    const oldRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
 
     if (!oldRefreshToken) {
-      console.log("Brak tokenu odświeżającego");
       return res.status(401).json({ message: "Brak tokenu odświeżającego" });
     }
 
-    // Sprawdź, czy token jest na blackliście
     const isBlacklisted = await Blacklist.findOne({ token: oldRefreshToken });
     if (isBlacklisted) {
-      console.log("Token odświeżający jest nieważny");
       return res
         .status(401)
         .json({ message: "Token odświeżający jest nieważny" });
@@ -275,7 +273,6 @@ const refreshToken = async (req, res, next) => {
       process.env.REFRESH_JWT_SECRET,
       async (err, decoded) => {
         if (err) {
-          console.log("Nieprawidłowy token odświeżający");
           return res
             .status(403)
             .json({ message: "Nieprawidłowy token odświeżający" });
@@ -283,7 +280,6 @@ const refreshToken = async (req, res, next) => {
 
         const user = await User.findById(decoded.id);
         if (!user) {
-          console.log("Użytkownik nie istnieje");
           return res.status(403).json({ message: "Użytkownik nie istnieje" });
         }
 
@@ -304,9 +300,7 @@ const refreshToken = async (req, res, next) => {
           }
         );
 
-        // Dodaj stary refresh token do blacklisty
         await new Blacklist({ token: oldRefreshToken }).save();
-        console.log("Dodano stary refresh token do blacklisty");
 
         res.cookie("accessToken", newAccessToken, {
           httpOnly: true,
@@ -322,7 +316,11 @@ const refreshToken = async (req, res, next) => {
           maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
-        res.json({ message: "Tokeny zostały odświeżone" });
+        res.json({
+          message: "Tokeny zostały odświeżone",
+          accessToken: newAccessToken,
+          refreshToken: newRefreshToken,
+        });
       }
     );
   } catch (error) {
