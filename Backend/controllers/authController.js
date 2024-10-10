@@ -3,6 +3,11 @@ const bcryptjs = require("bcryptjs");
 const User = require("../models/userSchema");
 const { registerSchema, loginSchema } = require("../utils/validationSchemas");
 const Blacklist = require("../models/blacklistSchema");
+const {
+  initials,
+  generateRandomColor,
+  generateInitialsAvatar,
+} = require("../utils/avatarUtils");
 
 const register = async (req, res, next) => {
   try {
@@ -16,6 +21,9 @@ const register = async (req, res, next) => {
     const { nanoid } = await import("nanoid");
     const { email, password } = req.body;
     console.log("Dane rejestracji:", { email });
+    const userInitials = initials(email).toUpperCase();
+    const avatarColor = generateRandomColor();
+    const avatar = generateInitialsAvatar(userInitials, avatarColor);
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -26,13 +34,14 @@ const register = async (req, res, next) => {
       });
     }
 
-    const userId = nanoid(); // Generuj id tutaj
+    const userId = nanoid();
     console.log("Wygenerowane ID:", userId);
 
     const newUser = new User({
       email,
       password,
       id: userId,
+      avatar,
     });
 
     console.log("Próba zapisania użytkownika");
@@ -45,6 +54,7 @@ const register = async (req, res, next) => {
       user: {
         email: newUser.email,
         id: newUser.id,
+        avatar: newUser.avatar,
       },
     });
   } catch (error) {
@@ -172,6 +182,75 @@ const logout = async (req, res, next) => {
   }
 };
 
+const deleteUser = async (req, res, next) => {
+  try {
+    const userId = req.user.id; // ID użytkownika z tokenu
+    const { password } = req.body;
+
+    // Weryfikacja tokenów
+    const accessToken = req.cookies.accessToken;
+    const refreshToken = req.cookies.refreshToken;
+    if (!accessToken) {
+      return res
+        .status(401)
+        .json({ message: "Brak autoryzacji. Zaloguj się ponownie." });
+    }
+
+    try {
+      jwt.verify(accessToken, process.env.JWT_SECRET);
+    } catch (err) {
+      return res
+        .status(401)
+        .json({ message: "Nieprawidłowy token. Zaloguj się ponownie." });
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "Nie znaleziono użytkownika" });
+    }
+
+    // Sprawdzenie hasła
+    const isPasswordCorrect = await user.comparePassword(password);
+    if (!isPasswordCorrect) {
+      return res.status(401).json({ message: "Nieprawidłowe hasło" });
+    }
+
+    // Usunięcie użytkownika
+    await User.findByIdAndDelete(userId);
+
+    // Dodanie tokenów do blacklisty
+    if (accessToken) {
+      await new Blacklist({ token: accessToken }).save();
+      console.log("Dodano accessToken do blacklisty");
+    }
+    if (refreshToken) {
+      await new Blacklist({ token: refreshToken }).save();
+      console.log("Dodano refreshToken do blacklisty");
+    }
+
+    // Usunięcie ciasteczek z tokenami
+    res.clearCookie("accessToken", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
+
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
+
+    res.status(200).json({
+      status: "success",
+      message: "Konto użytkownika zostało usunięte",
+    });
+  } catch (error) {
+    console.error("Błąd podczas usuwania konta:", error);
+    next(error);
+  }
+};
+
 const refreshToken = async (req, res, next) => {
   try {
     console.log("Rozpoczęcie odświeżania tokenów");
@@ -257,4 +336,5 @@ module.exports = {
   login,
   logout,
   refreshToken,
+  deleteUser,
 };
