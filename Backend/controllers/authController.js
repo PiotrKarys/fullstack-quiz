@@ -8,6 +8,8 @@ const {
   generateRandomColor,
   generateInitialsAvatar,
 } = require("../utils/avatarUtils");
+const passport = require("passport");
+const { v4: uuidv4 } = require("uuid");
 
 const register = async (req, res, next) => {
   try {
@@ -18,7 +20,6 @@ const register = async (req, res, next) => {
       return res.status(400).json({ message: error.details[0].message });
     }
 
-    const { nanoid } = await import("nanoid");
     const { email, password } = req.body;
     console.log("Dane rejestracji:", { email });
     const userInitials = initials(email).toUpperCase();
@@ -34,7 +35,7 @@ const register = async (req, res, next) => {
       });
     }
 
-    const userId = nanoid();
+    const userId = uuidv4();
     console.log("Wygenerowane ID:", userId);
 
     const newUser = new User({
@@ -63,86 +64,75 @@ const register = async (req, res, next) => {
   }
 };
 
-const login = async (req, res, next) => {
-  try {
-    console.log("Otrzymane dane logowania:", req.body);
-    const token = req.cookies.accessToken;
-    if (token) {
-      try {
-        jwt.verify(token, process.env.JWT_SECRET);
-        console.log("Użytkownik jest już zalogowany");
+const login = (req, res, next) => {
+  passport.authenticate("local", async (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.status(401).json({ message: info.message });
+    }
+
+    try {
+      // Sprawdź, czy użytkownik jest już zalogowany
+      if (req.isAuthenticated()) {
         return res.status(200).json({
           status: "success",
           message: "Użytkownik jest już zalogowany",
+          userData: {
+            email: req.user.email,
+            id: req.user.id,
+          },
         });
-      } catch (err) {
-        console.log("Nieważny token, kontynuowanie logowania");
       }
+
+      req.logIn(user, async err => {
+        if (err) {
+          return next(err);
+        }
+
+        const payload = {
+          id: user.id,
+          email: user.email,
+        };
+
+        const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
+          expiresIn: "1h",
+        });
+        const refreshToken = jwt.sign(payload, process.env.REFRESH_JWT_SECRET, {
+          expiresIn: "7d",
+        });
+
+        res.cookie("accessToken", accessToken, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: "strict",
+          maxAge: 60 * 60 * 1000, // 1 godzina
+        });
+
+        res.cookie("refreshToken", refreshToken, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: "strict",
+          maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dni
+        });
+
+        res.status(200).json({
+          status: "success",
+          message: "Zalogowano pomyślnie",
+          userData: {
+            email: user.email,
+            id: user.id,
+          },
+          accessToken,
+          refreshToken,
+        });
+      });
+    } catch (error) {
+      console.error("Błąd podczas logowania:", error);
+      next(error);
     }
-    const { error } = loginSchema.validate(req.body);
-    if (error) {
-      console.log("Błąd walidacji:", error.details[0].message);
-      return res.status(400).json({ message: error.details[0].message });
-    }
-
-    const { email, password } = req.body;
-
-    const user = await User.findOne({ email });
-    if (!user) {
-      console.log("Nie znaleziono użytkownika o emailu:", email);
-      return res.status(401).json({ message: "Nieprawidłowy email lub hasło" });
-    }
-    console.log("Znaleziono użytkownika:", user.email);
-
-    const isMatch = await bcryptjs.compare(password, user.password);
-    console.log("Wynik porównania hasła:", isMatch);
-    if (!isMatch) {
-      console.log("Nieprawidłowe hasło dla użytkownika:", email);
-      return res.status(401).json({ message: "Nieprawidłowy email lub hasło" });
-    }
-    console.log("Hasło poprawne dla użytkownika:", email);
-
-    const payload = {
-      id: user._id,
-      email: user.email,
-    };
-
-    const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
-    const refreshToken = jwt.sign(payload, process.env.REFRESH_JWT_SECRET, {
-      expiresIn: "7d",
-    });
-
-    // Ustawienie ciasteczek
-    res.cookie("accessToken", accessToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Używaj HTTPS w produkcji
-      sameSite: "strict",
-      maxAge: 60 * 60 * 1000, // 1 godzina
-    });
-
-    res.cookie("refreshToken", refreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dni
-    });
-
-    res.status(200).json({
-      status: "success",
-      message: "Zalogowano pomyślnie",
-      userData: {
-        email: user.email,
-        id: user.id,
-      },
-      accessToken,
-      refreshToken,
-    });
-  } catch (error) {
-    console.error("Błąd podczas logowania:", error);
-    next(error);
-  }
+  })(req, res, next);
 };
 
 const logout = async (req, res, next) => {
@@ -161,22 +151,29 @@ const logout = async (req, res, next) => {
       console.log("Dodano refreshToken do blacklisty");
     }
 
-    // Usuwamy ciasteczka z tokenami
-    res.clearCookie("accessToken", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-    });
+    // Wylogowanie z Passport
+    req.logout(err => {
+      if (err) {
+        return next(err);
+      }
 
-    res.clearCookie("refreshToken", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-    });
+      // Usuwamy ciasteczka z tokenami
+      res.clearCookie("accessToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+      });
 
-    res.status(200).json({
-      status: "success",
-      message: "Wylogowano pomyślnie",
+      res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+      });
+
+      res.status(200).json({
+        status: "success",
+        message: "Wylogowano pomyślnie",
+      });
     });
   } catch (error) {
     console.error("Błąd podczas wylogowania:", error);
@@ -284,7 +281,7 @@ const refreshToken = async (req, res, next) => {
         }
 
         const payload = {
-          id: user._id,
+          id: user.id,
           email: user.email,
         };
 

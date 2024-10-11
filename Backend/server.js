@@ -15,6 +15,8 @@ const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./swagger.yaml");
 const helmet = require("helmet");
 const swaggerUi = require("swagger-ui-express");
+const passport = require("./config/passport");
+
 // Połączenie z MongoDB
 connectDB().then(async () => {
   console.log("Połączono z bazą danych");
@@ -33,8 +35,11 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET || "tajny_klucz",
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: process.env.NODE_ENV === "production" },
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 24 * 60 * 60 * 1000, // 24 godziny
+    },
   })
 );
 app.use(generalLimiter);
@@ -46,6 +51,8 @@ app.use(
     filter: shouldCompress,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Trasy API
 app.use("/api", routes);

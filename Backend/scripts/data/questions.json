@@ -250,6 +250,29 @@
     ]
   },
   {
+    "question": "Jak działa `Express.js` w ekosystemie Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Jest minimalistycznym frameworkiem do budowy aplikacji webowych i API w Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Jest biblioteką do obsługi baz danych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Służy do zarządzania aplikacjami React",
+        "isCorrect": false
+      },
+      {
+        "text": "Optymalizuje działanie silników JS w przeglądarkach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
     "question": "Co to jest 'closure' w JavaScript?",
     "type": "javascript",
     "difficulty": "hard",
@@ -1384,6 +1407,52 @@
     ]
   },
   {
+    "question": "Co to jest 'Reconciliation' w kontekście React?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Proces porównywania i aktualizacji Virtual DOM z rzeczywistym DOM",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika łączenia komponentów klasowych i funkcyjnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda synchronizacji stanu między komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na obsługę błędów w aplikacji React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Critical Rendering Path' w kontekście wydajności stron internetowych?",
+    "type": "web",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Sekwencja kroków, które przeglądarka wykonuje, aby wyrenderować stronę",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji ładowania obrazów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda minimalizacji plików CSS i JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na przyspieszenie animacji w przeglądarce",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
     "question": "Co to jest 'Web Components'?",
     "type": "web",
     "difficulty": "hard",
@@ -1548,6 +1617,108 @@
       },
       {
         "text": "Framework do tworzenia responsywnych layoutów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `Object.values({a: 1, b: 2, c: 3}).reduce((acc, val) => acc + val, 0);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "6", "isCorrect": true },
+      { "text": "[1, 2, 3]", "isCorrect": false },
+      { "text": "{a: 1, b: 2, c: 3}", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie efekt tego kodu CSS: `div { aspect-ratio: 16 / 9; width: 100%; }`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Div będzie miał proporcje 16:9, zajmując pełną szerokość",
+        "isCorrect": true
+      },
+      {
+        "text": "Div będzie miał stałą wysokość 9px",
+        "isCorrect": false
+      },
+      {
+        "text": "Błąd składni CSS",
+        "isCorrect": false
+      },
+      {
+        "text": "Div będzie miał szerokość 16px i wysokość 9px",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `new Date('2023-06-15').toLocaleDateString('pl-PL');`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "'15.06.2023'", "isCorrect": true },
+      { "text": "'2023-06-15'", "isCorrect": false },
+      { "text": "'June 15, 2023'", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Jaki będzie wynik tego kodu React: `const [count, setCount] = useState(0); useEffect(() => { setCount(c => c + 1); }, []);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "count zostanie zwiększone o 1 po pierwszym renderowaniu",
+        "isCorrect": true
+      },
+      {
+        "text": "count pozostanie 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Błąd wykonania",
+        "isCorrect": false
+      },
+      {
+        "text": "count będzie zwiększane o 1 przy każdym renderowaniu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co zwróci `[1, 2, 3].flatMap(x => [x, x * 2]);`?",
+    "type": "code",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "[1, 2, 2, 4, 3, 6]", "isCorrect": true },
+      { "text": "[1, 2, 3, 2, 4, 6]", "isCorrect": false },
+      { "text": "[[1, 2], [2, 4], [3, 6]]", "isCorrect": false },
+      { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'Web Vitals' w kontekście wydajności stron internetowych?",
+    "type": "web",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Zestaw metryk Google do mierzenia doświadczenia użytkownika na stronie",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do testowania responsywności stron",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia progresywnych aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji czasu ładowania strony",
         "isCorrect": false
       }
     ]
@@ -2523,6 +2694,374 @@
     ]
   },
   {
+    "question": "Co to jest 'optional chaining' w JavaScript i jak działa?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Operator pozwalający na bezpieczny dostęp do zagnieżdżonych właściwości obiektu bez ryzyka błędu",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda optymalizacji pętli w tablicach",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika tworzenia funkcji asynchronicznych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania kodu JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jakie są różnice między `null` a `undefined` w JavaScript?",
+    "type": "javascript",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "`null` oznacza celowo brak wartości, a `undefined` oznacza, że wartość nie została przypisana",
+        "isCorrect": true
+      },
+      {
+        "text": "`null` jest typem prymitywnym, a `undefined` to obiekt",
+        "isCorrect": false
+      },
+      {
+        "text": "Nie ma różnicy, oba oznaczają brak wartości",
+        "isCorrect": false
+      },
+      {
+        "text": "`null` jest używany tylko w funkcjach, a `undefined` w zmiennych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'WeakMap' w JavaScript i kiedy warto jej używać?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Kolekcja, która pozwala na słabe referencje do kluczy, co umożliwia garbage collection",
+        "isCorrect": true
+      },
+      {
+        "text": "Typ Map, który wspiera tylko obiekty jako klucze",
+        "isCorrect": false
+      },
+      {
+        "text": "Struktura danych o stałej wielkości",
+        "isCorrect": false
+      },
+      {
+        "text": "Mapowanie słów kluczowych na wartości bez przeszkód",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działa 'Proxy' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Pozwala na tworzenie pułapek do przechwytywania operacji wykonywanych na obiektach",
+        "isCorrect": true
+      },
+      {
+        "text": "Optymalizuje dostęp do właściwości obiektów",
+        "isCorrect": false
+      },
+      {
+        "text": "Tworzy nowe instancje obiektów dynamicznie",
+        "isCorrect": false
+      },
+      {
+        "text": "Zastępuje standardowe metody obiektów własnymi implementacjami",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to są 'generatory' w JavaScript i jak się je używa?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Funkcje, które mogą być wstrzymywane i wznowione, używając `yield`",
+        "isCorrect": true
+      },
+      {
+        "text": "Typ funkcji, które zwracają obietnice (Promises)",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do generowania losowych liczb",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika tworzenia rekurencji bez stosu wywołań",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działają moduły ES6 i jakie korzyści przynoszą?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Pozwalają na importowanie i eksportowanie funkcji, klas i zmiennych, zwiększając modularność kodu",
+        "isCorrect": true
+      },
+      {
+        "text": "Umożliwiają dynamiczne tworzenie zmiennych globalnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Optymalizują działanie pętli w kodzie JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Zastępują klasy w JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'event loop' w JavaScript i jakie ma znaczenie dla asynchroniczności?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Mechanizm zarządzający zadaniami asynchronicznymi i kolejką zdarzeń",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia funkcji rekurencyjnych bez stosu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji pamięci w aplikacjach webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania kodu JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działa `Object.entries` w JavaScript?",
+    "type": "javascript",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Zwraca tablicę zawierającą pary [klucz, wartość] dla każdego właściwości obiektu",
+        "isCorrect": true
+      },
+      {
+        "text": "Tworzy nowy obiekt z przekazanych właściwości",
+        "isCorrect": false
+      },
+      {
+        "text": "Sortuje właściwości obiektu według kluczy",
+        "isCorrect": false
+      },
+      {
+        "text": "Filtrowuje właściwości obiektu na podstawie wartości",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'throttle' w programowaniu JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika ograniczania liczby wywołań funkcji w określonym przedziale czasu",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda tworzenia funkcji rekurencyjnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji pętli",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika zwiększania wydajności pamięci",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym są 'WeakSet' w JavaScript i jakie mają zastosowanie?",
+    "type": "javascript",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Kolekcja obiektów, gdzie słabe referencje umożliwiają garbage collection",
+        "isCorrect": true
+      },
+      {
+        "text": "Typ Set przeznaczony do przechowywania prymitywów",
+        "isCorrect": false
+      },
+      {
+        "text": "Struktura danych z unikalnymi kluczami i wartościami",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji kodu JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działa `async` funkcja w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcja, która zawsze zwraca obietnicę i pozwala używać `await` wewnątrz niej",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja, która działa synchronicznie mimo asynchronicznego kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Funkcja, która automatycznie obsługuje błędy bez `try...catch`",
+        "isCorrect": false
+      },
+      {
+        "text": "Funkcja, która nie może mieć parametrów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'nullish coalescing operator' (`??`) w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Operator zwracający prawą stronę wyrażenia tylko wtedy, gdy lewa jest `null` lub `undefined`",
+        "isCorrect": true
+      },
+      {
+        "text": "Operator sprawdzający, czy wartość jest fałszywa",
+        "isCorrect": false
+      },
+      {
+        "text": "Operator przypisania wartości domyślnej",
+        "isCorrect": false
+      },
+      {
+        "text": "Operator porównania podwójnego równości",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działa `Array.prototype.includes` w JavaScript?",
+    "type": "javascript",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Sprawdza, czy tablica zawiera określony element, zwracając wartość boolowską",
+        "isCorrect": true
+      },
+      {
+        "text": "Tworzy nową tablicę z unikalnymi elementami",
+        "isCorrect": false
+      },
+      {
+        "text": "Sortuje tablicę w porządku rosnącym",
+        "isCorrect": false
+      },
+      {
+        "text": "Filtruje elementy tablicy na podstawie warunku",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'destructuring' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Składnia umożliwiająca wyodrębnianie wartości z obiektów lub tablic do osobnych zmiennych",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia anonimowych funkcji",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji pamięci",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do kompresji danych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Jak działa `Object.values` w JavaScript?",
+    "type": "javascript",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Zwraca tablicę zawierającą wartości wszystkich własnych, enumerowalnych właściwości obiektu",
+        "isCorrect": true
+      },
+      {
+        "text": "Tworzy nowy obiekt z przekazanych wartości",
+        "isCorrect": false
+      },
+      {
+        "text": "Sortuje obiekt według wartości",
+        "isCorrect": false
+      },
+      {
+        "text": "Filtrowuje wartości obiektu na podstawie warunku",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'default parameters' w JavaScript?",
+    "type": "javascript",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcja parametrów domyślnych umożliwiająca ustawienie wartości domyślnych dla argumentów funkcji",
+        "isCorrect": true
+      },
+      {
+        "text": "Parametry, które muszą być zawsze podane podczas wywołania funkcji",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji przekazywania zmiennych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia funkcji anonimowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
     "question": "Co zwróci `Object.getOwnPropertyNames(Math);`?",
     "type": "code",
     "difficulty": "hard",
@@ -2534,6 +3073,2950 @@
       { "text": "[]", "isCorrect": false },
       { "text": "['PI', 'E', 'LN2', 'LN10']", "isCorrect": false },
       { "text": "Error", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Suspense' i do czego służy?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Mechanizm do obsługi asynchronicznego ładowania komponentów i danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem globalnym",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.lazy()' i jak się go używa?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcja do dynamicznego importowania komponentów, używana z Suspense",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda do opóźniania renderowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do lazy loading obrazów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Funkcja do optymalizacji wydajności aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Portal' i kiedy warto go używać?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm do renderowania komponentów poza hierarchią DOM ich rodzica",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do tworzenia animacji w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda komunikacji między komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.Fragment' i dlaczego jest użyteczny?",
+    "type": "react",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Wrapper pozwalający na grupowanie elementów bez dodawania dodatkowego węzła DOM",
+        "isCorrect": true
+      },
+      {
+        "text": "Komponent do tworzenia list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do tworzenia referencji do elementów DOM",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Fiber' i jakie przynosi korzyści?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Nowa implementacja algorytmu reconciliation, poprawiająca wydajność i umożliwiająca przerywalne renderowanie",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Error Boundary' w React i jak go zaimplementować?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Komponent przechwytujący błędy JavaScript w całym drzewie komponentów potomnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda walidacji propsów w komponentach",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.StrictMode' i jakie ma zastosowanie?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do identyfikacji potencjalnych problemów w aplikacji React",
+        "isCorrect": true
+      },
+      {
+        "text": "Tryb optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda zabezpieczania aplikacji przed atakami XSS",
+        "isCorrect": false
+      },
+      {
+        "text": "Komponent do zarządzania routingiem w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Context' i kiedy warto go używać?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm do przekazywania danych przez drzewo komponentów bez props drilling",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do zarządzania stanem lokalnym komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji renderowania w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do tworzenia formularzy w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Concurrent Mode' i jakie przynosi korzyści?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Zestaw nowych funkcji React umożliwiających przerywalne renderowanie i lepszą responsywność UI",
+        "isCorrect": true
+      },
+      {
+        "text": "Tryb do tworzenia aplikacji wielowątkowych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do równoległego przetwarzania danych w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Server Components' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Komponenty renderowane na serwerze, redukujące ilość JS wysyłanego do klienta i poprawiające wydajność",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia aplikacji izomorficznych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji routingu w aplikacjach React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania komponentów React na serwerze",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Profiler' i do czego służy?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do mierzenia wydajności renderowania komponentów React",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do tworzenia profili użytkowników w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji kodu React",
+        "isCorrect": false
+      },
+      {
+        "text": "Komponent do wyświetlania informacji o użytkowniku",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.memo()' i kiedy warto go używać?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Higher-order component do optymalizacji wydajności komponentów funkcyjnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda do zapamiętywania wyników funkcji w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do tworzenia memoizowanych selektorów w Redux",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Hooks Testing Library' i jakie ma zastosowanie?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka ułatwiająca testowanie niestandardowych hooków React",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznego generowania hooków w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia hooków w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji hooków w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React DevTools' i jakie funkcje oferuje?",
+    "type": "react",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Rozszerzenie przeglądarki do debugowania i analizy aplikacji React",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznego testowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Hooks' i jakie są ich główne zalety?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcje pozwalające na używanie stanu i innych funkcji React w komponentach funkcyjnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do optymalizacji renderowania komponentów klasowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania globalnym stanem aplikacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia komponentów wyższego rzędu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Virtual DOM' w React i jakie ma znaczenie dla wydajności?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Lekka kopia rzeczywistego DOM, która pozwala na szybsze porównywanie i aktualizacje",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika renderowania komponentów poza głównym drzewem DOM",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji CSS w aplikacjach React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania struktury komponentów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Controlled Component' w React i jak się go implementuje?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Komponent formularza, którego wartość jest kontrolowana przez stan React",
+        "isCorrect": true
+      },
+      {
+        "text": "Komponent, który nie może być modyfikowany przez użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia komponentów tylko do odczytu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Router' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do zarządzania routingiem w aplikacjach React, umożliwiająca nawigację bez przeładowania strony",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do optymalizacji ładowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika zarządzania stanem globalnym w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia responsywnych layoutów w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Render Props' w React i jakie ma zastosowania?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Technika współdzielenia kodu między komponentami poprzez przekazywanie funkcji renderującej jako prop",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na tworzenie animacji w komponentach React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania propsów w komponentach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.PureComponent' i jak różni się od zwykłego komponentu?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Komponent z domyślną implementacją shouldComponentUpdate, który porównuje props i state płytko",
+        "isCorrect": true
+      },
+      {
+        "text": "Komponent, który zawsze się renderuje, niezależnie od zmian propsów",
+        "isCorrect": false
+      },
+      {
+        "text": "Komponent bez stanu wewnętrznego",
+        "isCorrect": false
+      },
+      {
+        "text": "Komponent z zoptymalizowanym cyklem życia",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Synthetic Event' i jakie ma znaczenie?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Wrapper na natywne zdarzenia przeglądarki, zapewniający spójność między różnymi przeglądarkami",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia własnych zdarzeń w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji obsługi zdarzeń w dużych aplikacjach",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania zdarzeń w komponentach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Reconciliation' i jak wpływa na wydajność aplikacji?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Proces porównywania drzew komponentów i minimalizowania operacji na DOM, poprawiający wydajność",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda zarządzania stanem globalnym w aplikacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania wydajności komponentów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Portals' i w jakich sytuacjach są przydatne?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm renderowania komponentów poza hierarchią DOM ich rodzica, przydatny np. dla modali",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji ładowania dużych komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda tworzenia animacji przejść między komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do zarządzania routingiem w aplikacji React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Hooks Testing Library' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Biblioteka ułatwiająca testowanie niestandardowych hooków React, izolując je od komponentów",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznego generowania testów dla komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia end-to-end testów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji wydajności hooków w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.forwardRef' i w jakich sytuacjach jest używany?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Technika przekazywania referencji do komponentu potomnego",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda optymalizacji renderowania list",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia animacji w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na implementację routingu w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.createRef()' i jak się go używa?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Metoda tworzenia referencji do elementów DOM lub komponentów",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja do tworzenia nowych komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do generowania unikalnych kluczy dla list",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.cloneElement()' i kiedy jest przydatne?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Metoda do klonowania i modyfikowania istniejących elementów React",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja do kopiowania stanu komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia kopii zapasowych komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania dużych list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.Children' i jakie metody oferuje?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "API do manipulacji i iteracji po potomkach komponentu",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem dzieci w komponencie",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia komponentów potomnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda renderowania warunkowego w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.lazy()' i jak wpływa na wydajność aplikacji?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcja do dynamicznego importowania komponentów, poprawiająca czas ładowania aplikacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda opóźniania renderowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do lazy loading obrazów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji pętli w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'useCallback' hook w React i kiedy go stosować?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Hook do memoizacji funkcji, używany do optymalizacji wydajności",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do tworzenia efektów ubocznych w komponentach",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do zarządzania stanem komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do obsługi zdarzeń w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'useMemo' hook i jak różni się od 'useCallback'?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Hook do memoizacji wartości, podczas gdy useCallback memoizuje funkcje",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do zarządzania efektami ubocznymi w komponentach",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do optymalizacji renderowania list",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia referencji do elementów DOM",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'useReducer' hook i w jakich sytuacjach jest preferowany nad 'useState'?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Hook do zarządzania złożonym stanem, preferowany przy skomplikowanej logice aktualizacji stanu",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do redukcji ilości renderowań komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do łączenia wielu stanów w jeden",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'useImperativeHandle' hook i kiedy go używać?",
+    "type": "react",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Hook do dostosowywania instancji przekazywanej do komponentu nadrzędnego przy użyciu ref",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do manipulacji DOM w sposób imperatywny",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do optymalizacji renderowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia niestandardowych hooków",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'useLayoutEffect' hook i jak różni się od 'useEffect'?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Hook wykonywany synchronicznie po wszystkich mutacjach DOM, w przeciwieństwie do asynchronicznego useEffect",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do zarządzania układem komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do optymalizacji renderowania list",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia animacji w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'useDebugValue' hook i do czego służy?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Hook do wyświetlania dodatkowych informacji debugowych dla niestandardowych hooków",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania stanu komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do logowania błędów w aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Hook do testowania komponentów React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.memo()' i jak wpływa na wydajność komponentów funkcyjnych?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Higher-order component do optymalizacji renderowania komponentów funkcyjnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda do zapamiętywania stanu komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania komponentów funkcyjnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do tworzenia memoizowanych selektorów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.Suspense' i jak wpływa na ładowanie komponentów?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Komponent do obsługi opóźnionego ładowania innych komponentów i wyświetlania stanu ładowania",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do zawieszania renderowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do optymalizacji czasu ładowania aplikacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do obsługi błędów w komponentach asynchronicznych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.StrictMode' i jakie korzyści przynosi jego użycie?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do identyfikacji potencjalnych problemów w aplikacji React poprzez dodatkowe sprawdzenia i ostrzeżenia",
+        "isCorrect": true
+      },
+      {
+        "text": "Tryb wymuszający stosowanie najlepszych praktyk w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Komponent do zabezpieczania aplikacji przed atakami XSS",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Fiber Architecture' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Nowa implementacja wewnętrznego silnika React, umożliwiająca przerywalne renderowanie i priorytetyzację aktualizacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji mobilnych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem w dużych aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Concurrent Mode' i jak wpływa na doświadczenie użytkownika?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Tryb umożliwiający React renderowanie bez blokowania głównego wątku, poprawiając responsywność UI",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda do równoległego przetwarzania danych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania wydajności aplikacji React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Server Components' i jakie korzyści przynoszą?",
+    "type": "react",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "Komponenty renderowane na serwerze, zmniejszające ilość JS po stronie klienta i poprawiające wydajność",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika do tworzenia aplikacji izomorficznych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do testowania komponentów React na serwerze",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji SEO w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Suspense for Data Fetching' i jak wpływa na UX?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Mechanizm umożliwiający wstrzymanie renderowania komponentu do czasu załadowania danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem asynchronicznym w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji zapytań do API w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do cachowania danych w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Profiler API' i jak można go wykorzystać do optymalizacji wydajności?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "API do pomiaru czasu renderowania komponentów React i identyfikacji wąskich gardeł wydajności",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznej optymalizacji kodu React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do profilowania użytkowników w aplikacjach React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do testowania wydajności komponentów React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Strict Mode' i jakie problemy pomaga wykryć?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Narzędzie do identyfikacji potencjalnych problemów w aplikacji, takich jak przestarzałe API czy niebezpieczne cykle życia",
+        "isCorrect": true
+      },
+      {
+        "text": "Tryb wymuszający stosowanie TypeScript w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do zabezpieczania aplikacji React przed atakami XSS",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Hydration' i jakie ma znaczenie w aplikacjach renderowanych po stronie serwera?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Proces dołączania listenerów zdarzeń do statycznego HTML wygenerowanego na serwerze",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji ładowania danych w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda renderowania komponentów React na serwerze",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do synchronizacji stanu między serwerem a klientem",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Reconciliation' i jak wpływa na wydajność aplikacji?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Algorytm porównywania drzew komponentów w celu minimalizacji operacji na DOM",
+        "isCorrect": true
+      },
+      {
+        "text": "Proces synchronizacji stanu między komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do zarządzania pamięcią w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Synthetic Event' i jakie ma znaczenie dla wydajności?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Wrapper na natywne zdarzenia przeglądarki, optymalizujący obsługę zdarzeń w React",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika tworzenia niestandardowych zdarzeń w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do symulacji interakcji użytkownika w testach",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania zdarzeń w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Portals' i w jakich scenariuszach są użyteczne?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm renderowania komponentów poza hierarchią DOM ich rodzica, przydatny dla modali czy tooltipów",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika do tworzenia animacji przejść między komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do komunikacji między odległymi komponentami",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji ładowania dużych komponentów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Hooks Testing Library' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Biblioteka ułatwiająca testowanie niestandardowych hooków React w izolacji od komponentów",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznego generowania testów dla komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia end-to-end testów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do symulacji cyklu życia komponentów w testach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Error Boundary' i jak wpływa na stabilność aplikacji?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Komponent przechwytujący błędy JavaScript w całym drzewie komponentów potomnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania błędów w aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do obsługi wyjątków w asynchronicznych operacjach",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do izolowania błędów w poszczególnych komponentach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Render Props' i jakie problemy rozwiązuje?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Wzorzec projektowy umożliwiający współdzielenie logiki między komponentami poprzez props",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda optymalizacji renderowania list w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika do tworzenia dynamicznych formularzy w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do zarządzania stanem globalnym w aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React Higher-Order Components (HOC)' i jakie mają zastosowania?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Funkcje przyjmujące komponent i zwracające nowy komponent z dodatkową funkcjonalnością",
+        "isCorrect": true
+      },
+      {
+        "text": "Komponenty o wyższym priorytecie renderowania",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do tworzenia zagnieżdżonych komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji wydajności dużych aplikacji React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React.Fragment' i kiedy jest używany?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Komponent pozwalający na grupowanie elementów bez dodawania dodatkowego węzła DOM",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do fragmentacji dużych komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji renderowania list",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na tworzenie referencji do elementów DOM",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React DevTools' i do czego służy?",
+    "type": "react",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Rozszerzenie przeglądarki do debugowania i analizy aplikacji React",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do automatycznego testowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'prop drilling' w React i jakie są sposoby na uniknięcie tego problemu?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Przekazywanie propsów przez wiele poziomów komponentów; można tego uniknąć używając Context API lub bibliotek zarządzania stanem",
+        "isCorrect": true
+      },
+      {
+        "text": "Technika optymalizacji propsów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda przekazywania danych między komponentami rodzeństwa",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na tworzenie dynamicznych propsów",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.createContext()' i do czego służy?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Metoda do tworzenia obiektu kontekstu, umożliwiająca współdzielenie danych bez przekazywania propsów",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja do tworzenia nowych komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do generowania unikalnych kluczy dla list",
+        "isCorrect": false
+      },
+      {
+        "text": "Sposób na tworzenie globalnego stanu aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Hooks' i jakie są ich główne zalety?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcje pozwalające na używanie stanu i innych funkcji React w komponentach funkcyjnych, upraszczające kod i promujące ponowne użycie logiki",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzia do debugowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metody cyklu życia komponentów klasowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania routingiem w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'useEffect' hook i do czego służy?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Hook do wykonywania efektów ubocznych w komponentach funkcyjnych, np. pobierania danych czy subskrypcji",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do zarządzania stanem komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji renderowania w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia animacji w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'useMemo' hook i kiedy warto go stosować?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Hook do memoizacji kosztownych obliczeń, używany do optymalizacji wydajności",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do zapamiętywania referencji do funkcji",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do tworzenia memoizowanych selektorów w Redux",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do cachowania zapytań API",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'useReducer' hook i w jakich sytuacjach jest preferowany nad 'useState'?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Hook do zarządzania złożonym stanem, preferowany gdy logika aktualizacji stanu jest skomplikowana",
+        "isCorrect": true
+      },
+      {
+        "text": "Hook do redukcji ilości renderowań komponentu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do łączenia wielu stanów w jeden",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji dużych formularzy w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Custom Hook' w React i jakie są korzyści z ich tworzenia?",
+    "type": "react",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Własna funkcja hook pozwalająca na współdzielenie logiki między komponentami, zwiększająca reużywalność kodu",
+        "isCorrect": true
+      },
+      {
+        "text": "Specjalny typ komponentu React z własnym cyklem życia",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do tworzenia niestandardowych renderów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do modyfikacji wbudowanych hooków React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'React.lazy()' i jak wpływa na wydajność aplikacji?",
+    "type": "react",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Funkcja do dynamicznego importowania komponentów, poprawiająca czas ładowania aplikacji poprzez code splitting",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda do lazy loading obrazów w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do opóźniania renderowania komponentów",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji renderowania list w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Event Loop' w Node.js i jak działa?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm umożliwiający asynchroniczne wykonywanie operacji I/O bez blokowania głównego wątku",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do obsługi zdarzeń w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji wydajności aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Buffer' w Node.js i do czego służy?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Klasa do efektywnej obsługi surowych danych binarnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Mechanizm buforowania zapytań do bazy danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji pamięci w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda przechowywania zmiennych środowiskowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Cluster' moduł w Node.js i jakie ma zastosowanie?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Moduł umożliwiający tworzenie procesów potomnych do wykorzystania wielu rdzeni CPU",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do grupowania podobnych zapytań HTTP",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania klastrami baz danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Mechanizm do tworzenia mikrousług w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Stream' w Node.js i jakie są jego rodzaje?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Interfejs do obsługi danych strumieniowych; rodzaje to Readable, Writable, Duplex i Transform",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda przesyłania danych między procesami",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do strumieniowania wideo w aplikacjach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji przesyłu danych w sieci",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Child Process' moduł w Node.js i do czego służy?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Moduł umożliwiający tworzenie podprocesów i wykonywanie poleceń systemowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do zarządzania procesami potomnymi w klastrze",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do tworzenia procesów współbieżnych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Mechanizm do izolacji kodu w osobnych kontenerach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'npm' i jaką rolę pełni w ekosystemie Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Menedżer pakietów dla Node.js, służący do instalacji i zarządzania zależnościami",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji serwerowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'package.json' w projekcie Node.js i jakie informacje zawiera?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Plik konfiguracyjny projektu zawierający metadane, zależności i skrypty",
+        "isCorrect": true
+      },
+      {
+        "text": "Baza danych pakietów zainstalowanych w projekcie",
+        "isCorrect": false
+      },
+      {
+        "text": "Plik wykonawczy aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Dokumentacja API projektu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Callback Hell' w Node.js i jak można go uniknąć?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Problem z głęboko zagnieżdżonymi callbackami; można go uniknąć używając Promises, async/await lub bibliotek do kontroli przepływu",
+        "isCorrect": true
+      },
+      {
+        "text": "Błąd występujący przy zbyt dużej liczbie jednoczesnych połączeń",
+        "isCorrect": false
+      },
+      {
+        "text": "Problem z przeciążeniem Event Loop",
+        "isCorrect": false
+      },
+      {
+        "text": "Sytuacja, gdy callbacki nie są wywoływane w odpowiedniej kolejności",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'REPL' w kontekście Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Read-Eval-Print Loop, interaktywne środowisko do testowania kodu Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Real-time Event Processing Library",
+        "isCorrect": false
+      },
+      {
+        "text": "Rapid Express Programming Language",
+        "isCorrect": false
+      },
+      {
+        "text": "Runtime Environment for Parallel Logic",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Nodemon' i jakie ma zastosowanie w rozwoju aplikacji Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Narzędzie monitorujące zmiany w plikach i automatycznie restartujące serwer Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do monitorowania wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji real-time",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania bazami danych dla Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Event Loop' w Node.js i jak działa?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Mechanizm umożliwiający asynchroniczne wykonywanie operacji I/O bez blokowania głównego wątku",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do obsługi zdarzeń w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda optymalizacji wydajności aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Buffer' w Node.js i do czego służy?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Klasa do efektywnej obsługi surowych danych binarnych",
+        "isCorrect": true
+      },
+      {
+        "text": "Mechanizm buforowania zapytań do bazy danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji pamięci w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda przechowywania zmiennych środowiskowych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Cluster' moduł w Node.js i jakie ma zastosowanie?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Moduł umożliwiający tworzenie procesów potomnych do wykorzystania wielu rdzeni CPU",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do grupowania podobnych zapytań HTTP",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania klastrami baz danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Mechanizm do tworzenia mikrousług w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Stream' w Node.js i jakie są jego rodzaje?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Interfejs do obsługi danych strumieniowych; rodzaje to Readable, Writable, Duplex i Transform",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda przesyłania danych między procesami",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do strumieniowania wideo w aplikacjach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Technika optymalizacji przesyłu danych w sieci",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Child Process' moduł w Node.js i do czego służy?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Moduł umożliwiający tworzenie podprocesów i wykonywanie poleceń systemowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do zarządzania procesami potomnymi w klastrze",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do tworzenia procesów współbieżnych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Mechanizm do izolacji kodu w osobnych kontenerach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'npm' i jaką rolę pełni w ekosystemie Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Menedżer pakietów dla Node.js, służący do instalacji i zarządzania zależnościami",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do debugowania aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji serwerowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'package.json' w projekcie Node.js i jakie informacje zawiera?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Plik konfiguracyjny projektu zawierający metadane, zależności i skrypty",
+        "isCorrect": true
+      },
+      {
+        "text": "Baza danych pakietów zainstalowanych w projekcie",
+        "isCorrect": false
+      },
+      {
+        "text": "Plik wykonawczy aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Dokumentacja API projektu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Callback Hell' w Node.js i jak można go uniknąć?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Problem z głęboko zagnieżdżonymi callbackami; można go uniknąć używając Promises, async/await lub bibliotek do kontroli przepływu",
+        "isCorrect": true
+      },
+      {
+        "text": "Błąd występujący przy zbyt dużej liczbie jednoczesnych połączeń",
+        "isCorrect": false
+      },
+      {
+        "text": "Problem z przeciążeniem Event Loop",
+        "isCorrect": false
+      },
+      {
+        "text": "Sytuacja, gdy callbacki nie są wywoływane w odpowiedniej kolejności",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'REPL' w kontekście Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Read-Eval-Print Loop, interaktywne środowisko do testowania kodu Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Real-time Event Processing Library",
+        "isCorrect": false
+      },
+      {
+        "text": "Rapid Express Programming Language",
+        "isCorrect": false
+      },
+      {
+        "text": "Runtime Environment for Parallel Logic",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Nodemon' i jakie ma zastosowanie w rozwoju aplikacji Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Narzędzie monitorujące zmiany w plikach i automatycznie restartujące serwer Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do monitorowania wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji real-time",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania bazami danych dla Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Express.js' i jaką rolę pełni w ekosystemie Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Popularny framework do tworzenia aplikacji webowych i API w Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do obsługi baz danych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania pakietami dla Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Middleware' w kontekście Express.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Funkcje pośrednie przetwarzające żądania przed dotarciem do głównej logiki aplikacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Warstwa pośrednia między Node.js a systemem operacyjnym",
+        "isCorrect": false
+      },
+      {
+        "text": "Mechanizm do łączenia różnych frameworków Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności aplikacji Express.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Passport.js' i do czego służy w aplikacjach Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Middleware do uwierzytelniania w Node.js, wspierający różne strategie autoryzacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do zarządzania sesjami użytkowników",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia API RESTful",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do generowania dokumentacji API",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Socket.io' i jakie ma zastosowanie w Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka umożliwiająca dwukierunkową komunikację w czasie rzeczywistym między klientem a serwerem",
+        "isCorrect": true
+      },
+      {
+        "text": "Protokół do przesyłania danych binarnych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji połączeń sieciowych",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania bazami danych czasu rzeczywistego",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Mongoose' i jaką rolę pełni w aplikacjach Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ODM (Object Data Modeling) biblioteka dla MongoDB i Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do testowania baz danych NoSQL",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania pamięcią w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'PM2' i jakie ma zastosowanie w środowisku produkcyjnym Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Menedżer procesów dla aplikacji Node.js, umożliwiający zarządzanie i monitorowanie aplikacji w produkcji",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do testowania wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia mikrousług w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego deploymentu aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'GraphQL' i jak się go używa w Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Język zapytań i manipulacji danymi, często używany z Node.js do tworzenia elastycznych API",
+        "isCorrect": true
+      },
+      {
+        "text": "Baza danych grafowa dla Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do generowania schematów baz danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do wizualizacji danych w aplikacjach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Sequelize' i do czego służy w aplikacjach Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ORM (Object-Relational Mapping) dla Node.js, wspierający różne bazy danych SQL",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji real-time",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do walidacji danych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do migracji baz danych NoSQL",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Jest' i jakie ma zastosowanie w projektach Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Framework do testowania JavaScript, często używany w projektach Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do mockowania API w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do profilowania wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "System do continuous integration dla projektów Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Node.js Cluster API' i jakie problemy rozwiązuje?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "API umożliwiające tworzenie procesów potomnych, pomagające w wykorzystaniu wielu rdzeni CPU",
+        "isCorrect": true
+      },
+      {
+        "text": "Interfejs do zarządzania klastrami baz danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do grupowania podobnych zapytań HTTP",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do tworzenia rozproszonej architektury w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'libuv' i jaką rolę pełni w architekturze Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Biblioteka obsługująca pętlę zdarzeń i asynchroniczne I/O w Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do kompilacji kodu JavaScript do kodu maszynowego",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania pamięcią w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'process.nextTick()' w Node.js i jak różni się od setImmediate()?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Metoda planująca wykonanie funkcji w następnej iteracji pętli zdarzeń, przed I/O zdarzeniami",
+        "isCorrect": true
+      },
+      {
+        "text": "Funkcja do synchronicznego wykonywania kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda do opóźniania wykonania funkcji o określony czas",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'N-API' w kontekście Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "API do tworzenia natywnych dodatków, niezależne od wersji V8",
+        "isCorrect": true
+      },
+      {
+        "text": "Nowa wersja Node Package Manager (npm)",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia API RESTful w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do obsługi sieci neuronowych w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'worker_threads' moduł w Node.js i do czego służy?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Moduł umożliwiający uruchamianie kodu JavaScript w osobnych wątkach",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do zarządzania procesami w klastrze Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do obsługi wielowątkowych operacji I/O",
+        "isCorrect": false
+      },
+      {
+        "text": "System do równoważenia obciążenia w aplikacjach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Async Hooks' w Node.js i jakie ma zastosowanie?",
+    "type": "nodejs",
+    "difficulty": "very hard",
+    "answers": [
+      {
+        "text": "API do śledzenia cyklu życia zasobów asynchronicznych w Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do zarządzania asynchronicznymi operacjami",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do debugowania asynchronicznego kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia hooków w aplikacjach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'V8' w kontekście Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Silnik JavaScript używany przez Node.js do wykonywania kodu JavaScript",
+        "isCorrect": true
+      },
+      {
+        "text": "System zarządzania wersjami Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do kompilacji TypeScript do JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'nvm' i jakie ma zastosowanie w rozwoju aplikacji Node.js?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Narzędzie do zarządzania wieloma wersjami Node.js na jednym systemie",
+        "isCorrect": true
+      },
+      {
+        "text": "System wirtualizacji dla Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Menedżer pakietów dla Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Koa.js' i jak różni się od Express.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Lekki framework webowy, wykorzystujący generatory i async/await, stworzony przez twórców Express.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Rozszerzenie Express.js o dodatkowe funkcjonalności",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji real-time w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do obsługi baz danych w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Yarn' i jakie są jego główne zalety w porównaniu do npm?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Alternatywny menedżer pakietów, oferujący szybszą instalację i lepsze zarządzanie zależnościami",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do kompilacji kodu JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "System kontroli wersji dla projektów Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji webowych w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Fastify' i jakie są jego główne cechy?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Wysokowydajny framework webowy dla Node.js, skupiający się na niskim narzucie i szybkości",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do optymalizacji zapytań do bazy danych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do kompresji plików statycznych w aplikacjach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "System do cachowania zapytań HTTP w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Puppeteer' i jakie ma zastosowanie w Node.js?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do kontrolowania przeglądarki Chrome/Chromium, używana do automatyzacji, testowania i web scrapingu",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do generowania dokumentacji API",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania procesami w aplikacjach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Nest.js' i jakie paradygmaty programowania wspiera?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Progresywny framework do budowania wydajnych i skalowalnych aplikacji serwerowych, wspierający TypeScript i wzorce OOP, FP i FRP",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do tworzenia aplikacji mobilnych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia mikroserwisów w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatyzacji deploymentu aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Deno' i jak różni się od Node.js?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Runtime dla JavaScript i TypeScript, stworzony przez twórcę Node.js, z naciskiem na bezpieczeństwo i nowoczesne API",
+        "isCorrect": true
+      },
+      {
+        "text": "Nowa wersja Node.js z ulepszoną wydajnością",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji serwerowych w TypeScript",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania zależnościami w projektach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'pnpm' i jakie problemy rozwiązuje w zarządzaniu pakietami?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Szybki i wydajny menedżer pakietów, używający współdzielonego store'a do oszczędzania miejsca na dysku",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do analizy zależności w projektach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "System do automatycznego aktualizowania pakietów",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności aplikacji Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'ESM' w kontekście Node.js i jak różni się od 'CommonJS'?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ECMAScript Modules, natywny system modułów JavaScript, oferujący statyczną analizę importów i eksportów",
+        "isCorrect": true
+      },
+      {
+        "text": "Enhanced Script Manager, narzędzie do zarządzania skryptami w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Efficient State Machine, biblioteka do zarządzania stanem aplikacji",
+        "isCorrect": false
+      },
+      {
+        "text": "Extended Stream Module, rozszerzenie do obsługi strumieni w Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Node.js Timers' moduł i jakie funkcje oferuje?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Wbudowany moduł do planowania wykonania kodu w przyszłości, oferujący funkcje setTimeout, setInterval i setImmediate",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do mierzenia czasu wykonania funkcji",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do profilowania wydajności aplikacji Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Moduł do synchronizacji czasu między różnymi instancjami Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Node.js REPL' i jakie są jego główne zastosowania?",
+    "type": "nodejs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Read-Eval-Print Loop, interaktywne środowisko do testowania kodu Node.js i eksperymentowania z API",
+        "isCorrect": true
+      },
+      {
+        "text": "Rapid Execution Programming Language, język skryptowy dla Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Runtime Environment Package Loader, narzędzie do ładowania pakietów w czasie wykonania",
+        "isCorrect": false
+      },
+      {
+        "text": "Reactive Event Processing Library, biblioteka do obsługi zdarzeń asynchronicznych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Node.js Debugger' i jak można go używać?",
+    "type": "nodejs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Wbudowane narzędzie do debugowania aplikacji Node.js, dostępne przez flagę --inspect lub polecenie debug",
+        "isCorrect": true
+      },
+      {
+        "text": "Zewnętrzna biblioteka do analizy wydajności kodu",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego wykrywania błędów w kodzie",
+        "isCorrect": false
+      },
+      {
+        "text": "System do logowania błędów w aplikacjach produkcyjnych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Node.js Crypto' moduł i jakie funkcjonalności oferuje?",
+    "type": "nodejs",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Wbudowany moduł oferujący funkcje kryptograficzne, w tym szyfrowanie, deszyfrowanie i generowanie hash'y",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do obsługi kryptowalut w aplikacjach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do zabezpieczania połączeń sieciowych w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Moduł do generowania unikalnych identyfikatorów w aplikacjach",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Redux' i jakie problemy rozwiązuje w aplikacjach React?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do zarządzania stanem aplikacji, ułatwiająca przewidywalne aktualizacje stanu",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do routingu w aplikacjach React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Axios' i jakie ma zastosowanie w aplikacjach webowych?",
+    "type": "libraries",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Biblioteka do wykonywania zapytań HTTP, używana zarówno po stronie klienta jak i serwera",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia API RESTful",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do walidacji danych w formularzach",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania bazą danych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Lodash' i jakie funkcjonalności oferuje?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka narzędziowa JavaScript oferująca funkcje do manipulacji danymi, stringami i obiektami",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "System zarządzania bazą danych NoSQL",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do testowania aplikacji JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Moment.js' i do czego służy?",
+    "type": "libraries",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Biblioteka do parsowania, walidacji, manipulacji i formatowania dat w JavaScript",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia animacji w aplikacjach webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Socket.io' i jakie ma zastosowanie?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka umożliwiająca dwukierunkową komunikację w czasie rzeczywistym między klientem a serwerem",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia responsywnych interfejsów użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego testowania aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania bazą danych w czasie rzeczywistym",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Mongoose' i jakie problemy rozwiązuje?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka ODM (Object Data Modeling) dla MongoDB i Node.js, ułatwiająca interakcję z bazą danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia interfejsów użytkownika w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji zapytań SQL",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Jest' i do czego służy?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Framework do testowania JavaScript, często używany w projektach React i Node.js",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do tworzenia animacji w aplikacjach webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego formatowania kodu JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania zależnościami w projektach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'React Router' i jakie problemy rozwiązuje?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do obsługi routingu w aplikacjach React, umożliwiająca nawigację między widokami",
+        "isCorrect": true
+      },
+      {
+        "text": "Narzędzie do optymalizacji ścieżek w aplikacjach React",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia responsywnych layoutów",
+        "isCorrect": false
+      },
+      {
+        "text": "Biblioteka do zarządzania stanem globalnym w React",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Styled-components' i jakie korzyści przynosi?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do stylizacji komponentów w React, umożliwiająca pisanie CSS w JavaScript",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia animacji w React",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego generowania komponentów React",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania globalnymi stylami w aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Sequelize' i do czego służy?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ORM (Object-Relational Mapping) dla Node.js, ułatwiający pracę z bazami danych SQL",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do tworzenia schematów baz danych NoSQL",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do budowania API GraphQL",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do migracji danych między różnymi bazami danych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Electron' i jakie ma zastosowanie?",
+    "type": "libraries",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Framework do tworzenia aplikacji desktopowych przy użyciu technologii webowych",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do optymalizacji wydajności aplikacji webowych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do kompilacji JavaScript do kodu natywnego",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania procesami w aplikacjach Node.js",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Mocha' i jak się różni od Jest?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Framework testowy dla JavaScript, bardziej elastyczny i konfigurowalny niż Jest",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do mockowania danych w testach",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatycznego generowania testów jednostkowych",
+        "isCorrect": false
+      },
+      {
+        "text": "System do ciągłej integracji specyficzny dla JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Babel' i jaką rolę pełni w rozwoju aplikacji JavaScript?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Transpilator JavaScript, umożliwiający używanie najnowszych funkcji języka w starszych środowiskach",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do optymalizacji kodu JavaScript",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia aplikacji izomorficznych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do analizy statycznej kodu JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Ramda' i czym różni się od Lodash?",
+    "type": "libraries",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Biblioteka funkcyjna dla JavaScript, kładąca nacisk na programowanie funkcyjne i niezmienność danych",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia aplikacji reaktywnych",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do automatyzacji zadań w Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania stanem aplikacji",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Cheerio' i do czego służy?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Biblioteka do parsowania i manipulacji DOM w Node.js, często używana do web scrapingu",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do tworzenia animowanych interfejsów użytkownika",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji wydajności aplikacji React",
+        "isCorrect": false
+      },
+      {
+        "text": "System do zarządzania zadaniami asynchronicznymi w JavaScript",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Co to jest 'Three.js' i jakie ma zastosowanie?",
+    "type": "libraries",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Biblioteka do tworzenia i wyświetlania animacji 3D w przeglądarce",
+        "isCorrect": true
+      },
+      {
+        "text": "Framework do budowania aplikacji rzeczywistości rozszerzonej",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do optymalizacji renderowania w grach przeglądarkowych",
+        "isCorrect": false
+      },
+      {
+        "text": "System do tworzenia interaktywnych wizualizacji danych",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Czym jest 'Passport.js' i jakie problemy rozwiązuje?",
+    "type": "libraries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Middleware do uwierzytelniania w Node.js, obsługujący różne strategie autoryzacji",
+        "isCorrect": true
+      },
+      {
+        "text": "Biblioteka do szyfrowania danych w aplikacjach Node.js",
+        "isCorrect": false
+      },
+      {
+        "text": "Framework do tworzenia systemów single sign-on",
+        "isCorrect": false
+      },
+      {
+        "text": "Narzędzie do zarządzania sesjami użytkowników w aplikacjach webowych",
+        "isCorrect": false
+      }
     ]
   }
 ]

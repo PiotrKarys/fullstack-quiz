@@ -21,13 +21,13 @@ const protect = async (req, res, next) => {
   }
 
   try {
-    const isBlacklisted = await Blacklist.findOne({ token });
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const isBlacklisted = await Blacklist.findOne({ token: token });
     if (isBlacklisted) {
       return res.status(401).json({ message: "Token jest nieważny" });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id).select("-password");
+    req.user = await User.findOne({ id: decoded.id }).select("-password");
 
     if (!req.user) {
       return res.status(401).json({ message: "Użytkownik nie istnieje" });

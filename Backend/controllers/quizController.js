@@ -1,12 +1,13 @@
 const quizService = require("../services/quizService");
 const Quiz = require("../models/quizSchema");
 
+const { v4: uuidv4 } = require("uuid");
+
 exports.getRandomQuestions = async (req, res) => {
   console.log("Rozpoczęcie pobierania losowych pytań");
   try {
     if (!req.session.quizId) {
-      const { nanoid } = await import("nanoid");
-      req.session.quizId = nanoid();
+      req.session.quizId = uuidv4();
       console.log("Utworzono nowy quizId:", req.session.quizId);
     }
     const sessionId = req.session.quizId;
@@ -59,8 +60,7 @@ exports.resetQuiz = async (req, res) => {
   console.log("Rozpoczęcie resetowania quizu");
   try {
     if (!req.session.quizId) {
-      const { nanoid } = await import("nanoid");
-      req.session.quizId = nanoid();
+      req.session.quizId = uuidv4();
       console.log("Utworzono nowy quizId:", req.session.quizId);
     }
     const sessionId = req.session.quizId;
@@ -92,7 +92,7 @@ exports.getQuestionTypes = async (req, res) => {
 
 exports.getQuestionsByType = async (req, res) => {
   console.log("Rozpoczęcie pobierania pytań według typu");
-  const { type } = req.query;
+  const { type } = req.params;
   console.log("Typ pytania:", type);
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 20;
