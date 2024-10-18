@@ -11,10 +11,10 @@ const app = express();
 const { loginLimiter, generalLimiter } = require("./middleware/rateLimit");
 const compression = require("compression");
 const quizService = require("./services/quizService");
+const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./swagger.yaml");
 const helmet = require("helmet");
-const swaggerUi = require("swagger-ui-express");
 const passport = require("./config/passport");
 
 // Połączenie z MongoDB
@@ -53,7 +53,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Trasy API
 app.use("/api", routes);
 app.use("/error", errorHandler);

@@ -13,22 +13,18 @@ const { v4: uuidv4 } = require("uuid");
 
 const register = async (req, res, next) => {
   try {
-    console.log("Rozpoczęcie rejestracji");
     const { error } = registerSchema.validate(req.body);
     if (error) {
-      console.log("Błąd walidacji:", error.details[0].message);
       return res.status(400).json({ message: error.details[0].message });
     }
 
     const { email, password } = req.body;
-    console.log("Dane rejestracji:", { email });
     const userInitials = initials(email).toUpperCase();
     const avatarColor = generateRandomColor();
     const avatar = generateInitialsAvatar(userInitials, avatarColor);
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      console.log("Użytkownik już istnieje");
       return res.status(409).json({
         status: "error",
         message: "Email jest już w użyciu",
@@ -36,7 +32,6 @@ const register = async (req, res, next) => {
     }
 
     const userId = uuidv4();
-    console.log("Wygenerowane ID:", userId);
 
     const newUser = new User({
       email,
@@ -45,9 +40,7 @@ const register = async (req, res, next) => {
       avatar,
     });
 
-    console.log("Próba zapisania użytkownika");
     await newUser.save();
-    console.log("Użytkownik zapisany");
 
     res.status(201).json({
       status: "success",
@@ -137,18 +130,15 @@ const login = (req, res, next) => {
 
 const logout = async (req, res, next) => {
   try {
-    console.log("Rozpoczęcie wylogowania");
     const accessToken = req.cookies.accessToken;
     const refreshToken = req.cookies.refreshToken;
 
     // Dodaj tokeny do blacklisty
     if (accessToken) {
       await new Blacklist({ token: accessToken }).save();
-      console.log("Dodano accessToken do blacklisty");
     }
     if (refreshToken) {
       await new Blacklist({ token: refreshToken }).save();
-      console.log("Dodano refreshToken do blacklisty");
     }
 
     // Wylogowanie z Passport
@@ -220,11 +210,9 @@ const deleteUser = async (req, res, next) => {
     // Dodanie tokenów do blacklisty
     if (accessToken) {
       await new Blacklist({ token: accessToken }).save();
-      console.log("Dodano accessToken do blacklisty");
     }
     if (refreshToken) {
       await new Blacklist({ token: refreshToken }).save();
-      console.log("Dodano refreshToken do blacklisty");
     }
 
     // Usunięcie ciasteczek z tokenami
@@ -253,6 +241,7 @@ const deleteUser = async (req, res, next) => {
 const refreshToken = async (req, res, next) => {
   try {
     const oldRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
+    const oldAccessToken = req.cookies.accessToken || req.body.accessToken;
 
     if (!oldRefreshToken) {
       return res.status(401).json({ message: "Brak tokenu odświeżającego" });
@@ -275,7 +264,7 @@ const refreshToken = async (req, res, next) => {
             .json({ message: "Nieprawidłowy token odświeżający" });
         }
 
-        const user = await User.findById(decoded.id);
+        const user = await User.findOne({ id: decoded.id });
         if (!user) {
           return res.status(403).json({ message: "Użytkownik nie istnieje" });
         }
@@ -297,7 +286,21 @@ const refreshToken = async (req, res, next) => {
           }
         );
 
-        await new Blacklist({ token: oldRefreshToken }).save();
+        // Dodajemy stare tokeny do czarnej listy
+        try {
+          if (oldRefreshToken) {
+            await new Blacklist({ token: oldRefreshToken }).save();
+          }
+          if (oldAccessToken) {
+            await new Blacklist({ token: oldAccessToken }).save();
+          }
+        } catch (error) {
+          console.error(
+            "Błąd podczas dodawania tokenów do czarnej listy:",
+            error
+          );
+          // Możemy zdecydować, czy chcemy przerwać operację, czy kontynuować
+        }
 
         res.cookie("accessToken", newAccessToken, {
           httpOnly: true,

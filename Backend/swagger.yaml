@@ -1,108 +1,102 @@
 openapi: 3.0.0
 info:
   title: Quiz API
-  description: API do zarządzania quizami i autoryzacją użytkowników
   version: 1.0.0
-  contact:
-    name: Twoje Imię
-    email: twoj@email.com
+  description: API dla aplikacji quizowej
 
 servers:
-  - url: http://localhost:5000
-    description: Serwer deweloperski
-  - url: https://twoja-domena.com
-    description: Serwer produkcyjny
+  - url: http://localhost:5000/api
+    description: Serwer lokalny
 
 tags:
-  - name: Auth
-    description: Endpointy związane z autoryzacją
+  - name: Authorization
+    description: Operacje związane z autoryzacją
   - name: Quiz
-    description: Endpointy związane z quizami
+    description: Operacje związane z quizem
+  - name: Questions
+    description: Operacje związane z pytaniami
 
 paths:
-  /api/auth/register:
+  /auth/register:
     post:
-      summary: Rejestracja nowego użytkownika
       tags:
-        - Auth
+        - Authorization
+      summary: Rejestracja nowego użytkownika
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required:
-                - email
-                - password
               properties:
                 email:
                   type: string
                   format: email
+                  example: "test@example.com"
                 password:
                   type: string
                   format: password
+                  example: "Password123@"
+              required:
+                - email
+                - password
       responses:
         "201":
           description: Użytkownik został pomyślnie zarejestrowany
         "400":
-          description: Błędne dane wejściowe
+          description: Nieprawidłowe dane wejściowe
         "409":
-          description: Użytkownik o podanym emailu już istnieje
+          description: Użytkownik o podanym adresie email już istnieje
 
-  /api/auth/login:
+  /auth/login:
     post:
-      summary: Logowanie użytkownika
       tags:
-        - Auth
+        - Authorization
+      summary: Logowanie użytkownika
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required:
-                - email
-                - password
               properties:
                 email:
                   type: string
                   format: email
+                  example: "test@example.com"
                 password:
                   type: string
                   format: password
+                  example: "Password123@"
+              required:
+                - email
+                - password
       responses:
         "200":
           description: Użytkownik zalogowany pomyślnie
-        "400":
-          description: Błędne dane wejściowe
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  userData:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                      id:
+                        type: string
+                  accessToken:
+                    type: string
+                  refreshToken:
+                    type: string
         "401":
-          description: Nieprawidłowy email lub hasło
+          description: Nieprawidłowe dane logowania
 
-  /api/auth/logout:
-    post:
-      summary: Wylogowanie użytkownika
-      tags:
-        - Auth
-      security:
-        - bearerAuth: []
-      responses:
-        "200":
-          description: Użytkownik wylogowany pomyślnie
-        "401":
-          description: Brak autoryzacji
-
-  /api/auth/refresh-token:
-    post:
-      summary: Odświeżenie tokenu dostępu
-      tags:
-        - Auth
-      responses:
-        "200":
-          description: Token odświeżony pomyślnie
-        "401":
-          description: Nieprawidłowy token odświeżający
-
-components:
   securitySchemes:
     bearerAuth:
       type: http
