@@ -1,7 +1,10 @@
 const jwt = require("jsonwebtoken");
-const bcryptjs = require("bcryptjs");
 const User = require("../models/userSchema");
-const { registerSchema, loginSchema } = require("../utils/validationSchemas");
+const {
+  registerSchema,
+  loginSchema,
+  refreshTokenSchema,
+} = require("../utils/validationSchemas");
 const Blacklist = require("../models/blacklistSchema");
 const {
   initials,
@@ -10,6 +13,7 @@ const {
 } = require("../utils/avatarUtils");
 const passport = require("passport");
 const { v4: uuidv4 } = require("uuid");
+const moment = require("moment-timezone");
 
 const register = async (req, res, next) => {
   try {
@@ -18,16 +22,24 @@ const register = async (req, res, next) => {
       return res.status(400).json({ message: error.details[0].message });
     }
 
-    const { email, password } = req.body;
-    const userInitials = initials(email).toUpperCase();
+    const { email, password, confirmPassword, name } = req.body;
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ message: "Hasła nie są takie same" });
+    }
+
+    const userInitials = initials(name).toUpperCase();
     const avatarColor = generateRandomColor();
     const avatar = generateInitialsAvatar(userInitials, avatarColor);
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ $or: [{ email }, { name }] });
     if (existingUser) {
       return res.status(409).json({
         status: "error",
-        message: "Email jest już w użyciu",
+        message:
+          existingUser.email === email
+            ? "Email jest już w użyciu"
+            : "Nazwa użytkownika jest już zajęta",
       });
     }
 
@@ -36,8 +48,10 @@ const register = async (req, res, next) => {
     const newUser = new User({
       email,
       password,
+      name,
       id: userId,
       avatar,
+      registrationDate: moment().tz("Europe/Warsaw").toDate(),
     });
 
     await newUser.save();
@@ -47,6 +61,7 @@ const register = async (req, res, next) => {
       message: "Użytkownik został utworzony",
       user: {
         email: newUser.email,
+        name: newUser.name,
         id: newUser.id,
         avatar: newUser.avatar,
       },
@@ -58,6 +73,11 @@ const register = async (req, res, next) => {
 };
 
 const login = (req, res, next) => {
+  const { error } = loginSchema.validate(req.body);
+  if (error) {
+    return res.status(400).json({ message: error.details[0].message });
+  }
+
   passport.authenticate("local", async (err, user, info) => {
     if (err) {
       return next(err);
@@ -79,6 +99,16 @@ const login = (req, res, next) => {
         });
       }
 
+      // Sprawdź częstotliwość logowania
+      const lastLogin = user.lastLogin || new Date(0);
+      const now = new Date();
+      if (now - lastLogin < 60000) {
+        // 1 minuta
+        return res.status(429).json({
+          message: "Zbyt częste próby logowania. Spróbuj ponownie za chwilę.",
+        });
+      }
+
       req.logIn(user, async err => {
         if (err) {
           return next(err);
@@ -95,6 +125,12 @@ const login = (req, res, next) => {
         const refreshToken = jwt.sign(payload, process.env.REFRESH_JWT_SECRET, {
           expiresIn: "7d",
         });
+
+        // Aktualizacja czasów utworzenia tokenów i ostatniego logowania
+        user.lastAccessTokenCreated = moment().tz("Europe/Warsaw").toDate();
+        user.lastRefreshTokenCreated = moment().tz("Europe/Warsaw").toDate();
+        user.lastLogin = moment().tz("Europe/Warsaw").toDate();
+        await user.save();
 
         res.cookie("accessToken", accessToken, {
           httpOnly: true,
@@ -132,13 +168,14 @@ const logout = async (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken;
     const refreshToken = req.cookies.refreshToken;
+    const userId = req.user.id;
 
     // Dodaj tokeny do blacklisty
     if (accessToken) {
-      await new Blacklist({ token: accessToken }).save();
+      await new Blacklist({ token: accessToken, userId }).save();
     }
     if (refreshToken) {
-      await new Blacklist({ token: refreshToken }).save();
+      await new Blacklist({ token: refreshToken, userId }).save();
     }
 
     // Wylogowanie z Passport
@@ -209,10 +246,10 @@ const deleteUser = async (req, res, next) => {
 
     // Dodanie tokenów do blacklisty
     if (accessToken) {
-      await new Blacklist({ token: accessToken }).save();
+      await new Blacklist({ token: accessToken, userId }).save();
     }
     if (refreshToken) {
-      await new Blacklist({ token: refreshToken }).save();
+      await new Blacklist({ token: refreshToken, userId }).save();
     }
 
     // Usunięcie ciasteczek z tokenami
@@ -240,6 +277,11 @@ const deleteUser = async (req, res, next) => {
 
 const refreshToken = async (req, res, next) => {
   try {
+    const { error } = refreshTokenSchema.validate(req.body);
+    if (error) {
+      return res.status(400).json({ message: error.details[0].message });
+    }
+
     const oldRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
     const oldAccessToken = req.cookies.accessToken || req.body.accessToken;
 
@@ -269,6 +311,16 @@ const refreshToken = async (req, res, next) => {
           return res.status(403).json({ message: "Użytkownik nie istnieje" });
         }
 
+        const lastRefresh = user.lastRefreshTokenCreated;
+        const now = new Date();
+        if (lastRefresh && now - lastRefresh < 60000) {
+          // 1 minuta
+          return res.status(429).json({
+            message:
+              "Zbyt częste odświeżanie tokenu. Spróbuj ponownie za chwilę.",
+          });
+        }
+
         const payload = {
           id: user.id,
           email: user.email,
@@ -277,7 +329,6 @@ const refreshToken = async (req, res, next) => {
         const newAccessToken = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: "15m",
         });
-
         const newRefreshToken = jwt.sign(
           payload,
           process.env.REFRESH_JWT_SECRET,
@@ -286,13 +337,24 @@ const refreshToken = async (req, res, next) => {
           }
         );
 
+        // Aktualizacja czasów utworzenia tokenów
+        user.lastAccessTokenCreated = moment().tz("Europe/Warsaw").toDate();
+        user.lastRefreshTokenCreated = moment().tz("Europe/Warsaw").toDate();
+        await user.save();
+
         // Dodajemy stare tokeny do czarnej listy
         try {
           if (oldRefreshToken) {
-            await new Blacklist({ token: oldRefreshToken }).save();
+            await new Blacklist({
+              token: oldRefreshToken,
+              userId: user.id,
+            }).save();
           }
           if (oldAccessToken) {
-            await new Blacklist({ token: oldAccessToken }).save();
+            await new Blacklist({
+              token: oldAccessToken,
+              userId: user.id,
+            }).save();
           }
         } catch (error) {
           console.error(
@@ -329,10 +391,37 @@ const refreshToken = async (req, res, next) => {
   }
 };
 
+const getUserInfo = async (req, res) => {
+  try {
+    const user = await User.findOne({ id: req.user.id }).select("-password");
+    if (!user) {
+      return res.status(404).json({ message: "Użytkownik nie znaleziony" });
+    }
+    res.json({
+      id: user.id,
+      email: user.email,
+      avatar: user.avatar,
+      registrationDate: user.registrationDate,
+      lastAccessTokenCreated: user.lastAccessTokenCreated,
+      lastRefreshTokenCreated: user.lastRefreshTokenCreated,
+    });
+  } catch (error) {
+    console.error("Błąd podczas pobierania informacji o użytkowniku:", error);
+    res.status(500).json({ message: "Błąd serwera" });
+  }
+};
+
+const isTokenBlacklisted = async (token, userId) => {
+  const blacklistedToken = await Blacklist.findOne({ token, userId });
+  return !!blacklistedToken;
+};
+
 module.exports = {
   register,
   login,
   logout,
   refreshToken,
   deleteUser,
+  getUserInfo,
+  isTokenBlacklisted,
 };

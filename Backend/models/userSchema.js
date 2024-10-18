@@ -20,6 +20,8 @@ const userSchema = new mongoose.Schema({
   },
   name: {
     type: String,
+    required: true,
+    unique: true,
     trim: true,
   },
   role: {
@@ -34,6 +36,19 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
     default: "",
+  },
+  registrationDate: {
+    type: Date,
+    default: Date.now,
+  },
+  lastAccessTokenCreated: {
+    type: Date,
+  },
+  lastRefreshTokenCreated: {
+    type: Date,
+  },
+  lastLogin: {
+    type: Date,
   },
 });
 

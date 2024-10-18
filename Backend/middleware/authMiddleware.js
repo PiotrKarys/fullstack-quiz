@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const Blacklist = require("../models/blacklistSchema");
 const User = require("../models/userSchema");
+const { isTokenBlacklisted } = require("../controllers/authController");
 
 const protect = async (req, res, next) => {
   let token;
@@ -22,7 +23,9 @@ const protect = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const isBlacklisted = await Blacklist.findOne({ token: token });
+
+    // Sprawdź, czy token jest na czarnej liście
+    const isBlacklisted = await isTokenBlacklisted(token, decoded.id);
     if (isBlacklisted) {
       return res.status(401).json({ message: "Token jest nieważny" });
     }

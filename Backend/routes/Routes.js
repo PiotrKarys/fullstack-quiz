@@ -18,6 +18,7 @@ router.use(protect);
 router.post("/auth/logout", authController.logout);
 router.post("/auth/refresh-token", authController.refreshToken);
 router.delete("/auth/delete-account", authController.deleteUser);
+router.get("/auth/user-info", protect, authController.getUserInfo);
 
 // Chronione trasy quizu
 router.get("/quiz/random", quizLimiter, quizController.getRandomQuestions);
