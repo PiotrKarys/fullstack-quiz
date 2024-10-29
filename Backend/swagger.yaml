@@ -29,6 +29,10 @@ paths:
             schema:
               type: object
               properties:
+                name:
+                  type: string
+                  format: name
+                  example: "test"
                 email:
                   type: string
                   format: email
@@ -37,9 +41,15 @@ paths:
                   type: string
                   format: password
                   example: "Password123@"
+                confirmPassword:
+                  type: string
+                  format: password
+                  example: "Password123@"
               required:
+                - name
                 - email
                 - password
+                - confirmPassword
       responses:
         "201":
           description: Użytkownik został pomyślnie zarejestrowany
@@ -60,9 +70,8 @@ paths:
             schema:
               type: object
               properties:
-                email:
+                login:
                   type: string
-                  format: email
                   example: "test@example.com"
                 password:
                   type: string
@@ -86,8 +95,9 @@ paths:
                   userData:
                     type: object
                     properties:
-                      email:
+                      login:
                         type: string
+                        type: name
                       id:
                         type: string
                   accessToken:
