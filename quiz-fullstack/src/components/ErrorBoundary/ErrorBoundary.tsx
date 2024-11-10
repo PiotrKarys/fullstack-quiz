@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import "./ErrorBoudary.css";
 
 interface Props {
   children: React.ReactNode;
@@ -26,7 +27,7 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
+        <div className="error-boundary">
           <h1>Coś poszło nie tak.</h1>
           <p>{this.state.error?.message}</p>
         </div>

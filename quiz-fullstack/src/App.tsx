@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
+import Home from "./components/pages/Home";
 import Footer from "./components/Footer/Footer";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import "./App.css";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 
 const App: React.FC = () => {
   return (
@@ -13,10 +14,8 @@ const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<div>Logowanie</div>} />
-          <Route path="/register" element={<div>Rejestracja</div>} />
-          <Route path="/quiz" element={<div>Quiz</div>} />
-          <Route path="/contact" element={<div>Kontakt</div>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </ErrorBoundary>
