@@ -28,7 +28,12 @@ connectDB().then(async () => {
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Adres frontend
+    credentials: true, // Umożliwia wysyłanie ciasteczek
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(

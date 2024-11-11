@@ -42,3 +42,20 @@ export const registerUser = async (registerData: {
 
   return await response.json(); // Zwracamy dane użytkownika
 };
+
+// Funkcja do wylogowania
+export const logoutUser = async () => {
+  console.log("Wysyłanie żądania wylogowania...");
+  const response = await fetch(`${API_URL}/logout`, {
+    method: "POST",
+    credentials: "include", // Umożliwia wysyłanie ciasteczek
+  });
+
+  console.log("Odpowiedź:", response); // Loguj odpowiedź
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message); // Rzucamy błąd, jeśli odpowiedź nie jest ok
+  }
+
+  return await response.json(); // Zwracamy dane odpowiedzi
+};
