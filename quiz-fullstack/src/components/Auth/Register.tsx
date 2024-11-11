@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/userSlice"; // Importuj akcję logowania
-import { registerUser } from "../../api/api"; // Importuj funkcję rejestracji
+import { registerUser } from "../../api/authApi"; // Importuj funkcję rejestracji
 import { RegisterData } from "../../types"; // Importuj nowy typ
 
 const Register: React.FC = () => {

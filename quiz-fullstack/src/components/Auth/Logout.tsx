@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/userSlice"; // Importuj akcję wylogowania
-import { logoutUser } from "../../api/api"; // Importuj funkcję wylogowania
+import { logoutUser } from "../../api/authApi"; // Importuj funkcję wylogowania
 import { RootState } from "../../store/store"; // Importuj RootState
 
 const Logout: React.FC = () => {

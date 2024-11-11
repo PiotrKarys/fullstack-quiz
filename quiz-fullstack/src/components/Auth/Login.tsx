@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/userSlice"; // Importuj akcję logowania
-import { loginUser } from "../../api/api"; // Importujemy funkcję logowania
+import { loginUser } from "../../api/authApi"; // Importujemy funkcję logowania
 
 const Login: React.FC = () => {
   const [loginInput, setLogin] = useState<string>(""); // Używamy login jako email lub name

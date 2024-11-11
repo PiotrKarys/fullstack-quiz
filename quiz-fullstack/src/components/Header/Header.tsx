@@ -25,15 +25,17 @@ const Header: React.FC = () => {
             </>
           )}
           <li>
-            <Link to="/quiz">Quiz</Link>
-          </li>
-          <li>
             <Link to="/contact">Kontakt</Link>
           </li>
           {isLoggedIn && (
-            <li>
-              <Logout />
-            </li>
+            <>
+              <li>
+                <Link to="/quiz">Quiz</Link>
+              </li>
+              <li>
+                <Logout />
+              </li>
+            </>
           )}
         </ul>
       </nav>

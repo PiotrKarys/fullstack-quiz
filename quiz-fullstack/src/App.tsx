@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
+// import Quiz from "./components/Quiz/Quiz";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          {/* <Route path="/quiz" element={<Quiz />} /> */}
         </Routes>
         <Footer />
       </ErrorBoundary>
