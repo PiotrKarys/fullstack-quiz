@@ -27,9 +27,8 @@ const registerSchema = Joi.object({
       "string.max": "Hasło nie może być dłuższe niż 100 znaków",
       "any.required": "Hasło jest wymagane",
     }),
-  confirmPassword: Joi.string().valid(Joi.ref("password")).required().messages({
+  confirmPassword: Joi.string().valid(Joi.ref("password")).optional().messages({
     "any.only": "Hasła muszą być takie same",
-    "any.required": "Potwierdzenie hasła jest wymagane",
   }),
   name: Joi.string().min(3).max(30).trim().required().messages({
     "string.min": "Nazwa użytkownika musi mieć co najmniej 3 znaki",

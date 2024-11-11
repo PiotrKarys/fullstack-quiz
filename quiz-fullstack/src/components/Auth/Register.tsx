@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/userSlice"; // Importuj akcję logowania
 import { registerUser } from "../../api/api"; // Importuj funkcję rejestracji
+import { RegisterData } from "../../types"; // Importuj nowy typ
 
 const Register: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<RegisterData>({
     name: "",
     email: "",
     password: "",
@@ -11,6 +14,7 @@ const Register: React.FC = () => {
 
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const dispatch = useDispatch(); // Hook do uzyskania dostępu do dispatch
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,27 +22,28 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null); // Resetuj błąd
-    setSuccessMessage(null); // Resetuj komunikat sukcesu
+    setError(null);
+    setSuccessMessage(null);
 
-    // Walidacja hasła
     if (formData.password !== formData.confirmPassword) {
       setError("Hasła nie są takie same");
       return;
     }
 
     try {
-      // Przesyłamy dane w odpowiednim formacie
       const response = await registerUser({
         name: formData.name,
         email: formData.email,
         password: formData.password,
-        confirmPassword: formData.confirmPassword,
       });
-      setSuccessMessage(response.message); // Ustaw komunikat sukcesu
-      console.log("Użytkownik:", response.user); // Logowanie danych użytkownika
+      setSuccessMessage(response.message);
+
+      // Dispatchuj akcję logowania po rejestracji
+      dispatch(
+        login({ user: { email: response.user.email, id: response.user.id } })
+      );
     } catch (error: any) {
-      setError(error.message); // Ustaw błąd
+      setError(error.message);
     }
   };
 
@@ -80,12 +85,8 @@ const Register: React.FC = () => {
         />
         <button type="submit">Zarejestruj się</button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-      {/* Wyświetlanie błędów */}
-      {successMessage && (
-        <p style={{ color: "green" }}>{successMessage}</p>
-      )}{" "}
-      {/* Wyświetlanie komunikatu sukcesu */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
     </div>
   );
 };

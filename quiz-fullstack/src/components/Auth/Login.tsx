@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/userSlice"; // Importuj akcję logowania
 import { loginUser } from "../../api/api"; // Importujemy funkcję logowania
 
 const Login: React.FC = () => {
-  const [login, setLogin] = useState<string>(""); // Używamy login jako email lub name
+  const [loginInput, setLogin] = useState<string>(""); // Używamy login jako email lub name
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const dispatch = useDispatch(); // Hook do uzyskania dostępu do dispatch
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,15 +15,26 @@ const Login: React.FC = () => {
 
     try {
       // Przesyłamy dane w odpowiednim formacie
-      const data = await loginUser({ login, password }); // Używamy funkcji API
-      // Zapisz tokeny w localStorage lub sessionStorage
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
-      console.log("Zalogowany użytkownik:", data.userData); // Logowanie danych użytkownika
+      const data = await loginUser({ login: loginInput, password }); // Używamy funkcji API
+
+      // Zapisz tokeny w cookies
+      document.cookie = `accessToken=${data.accessToken}; path=/;`;
+      document.cookie = `refreshToken=${data.refreshToken}; path=/;`;
+
+      // Dispatchuj akcję logowania
+      dispatch(
+        login({ user: { email: data.userData.email, id: data.userData.id } })
+      );
+
       // Przekierowanie lub aktualizacja stanu aplikacji
       // np. history.push("/dashboard");
     } catch (err) {
-      setError(err.message); // Ustawiamy błąd do wyświetlenia
+      // Sprawdź, czy err jest typu Error
+      if (err instanceof Error) {
+        setError(err.message); // Ustawiamy błąd do wyświetlenia
+      } else {
+        setError("Wystąpił nieznany błąd."); // Obsługuje przypadki, gdy err nie jest instancją Error
+      }
     }
   };
 
@@ -34,7 +48,7 @@ const Login: React.FC = () => {
           <label>Login (Email lub Nazwa):</label>
           <input
             type="text"
-            value={login}
+            value={loginInput}
             onChange={e => setLogin(e.target.value)}
             required
           />

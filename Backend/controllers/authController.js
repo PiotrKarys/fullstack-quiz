@@ -22,11 +22,7 @@ const register = async (req, res, next) => {
       return res.status(400).json({ message: error.details[0].message });
     }
 
-    const { email, password, confirmPassword, name } = req.body;
-
-    if (password !== confirmPassword) {
-      return res.status(400).json({ message: "Hasła nie są takie same" });
-    }
+    const { email, password, name } = req.body;
 
     const userInitials = initials(name).toUpperCase();
     const avatarColor = generateRandomColor();
